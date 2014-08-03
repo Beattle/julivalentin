@@ -1,3 +1,6 @@
+<?php echo '<pre>' . print_r($route, true) . '</pre>';
+var_dump($route);
+?>
 <footer>
     <?php if ($logo) { ?>
         <div id="logo">
@@ -20,9 +23,9 @@
                                 <ul>
                                     <?php foreach($header['sub_title'] as $subtitle){ ?>
                                         <li>
-                                            <?php if(isset($subtitle['href'])){?>
+                                            <?php if(isset($subtitle['href'])){;?>
                                                 <a href="<?php echo $subtitle['href']; ?>"><?php echo $subtitle['title']; ?></a>
-                                            <?php }else{?>
+                                            <?php }else{ var_dump($subtitle['link'])?>
                                                 <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
                                             <?php } ?>
                                             <?php if($subtitle['sub_title']){?>

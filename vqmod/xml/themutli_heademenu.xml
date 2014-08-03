@@ -90,9 +90,9 @@ $_['text_headermenu']                  = 'Footer menu';
 
 		foreach ($headermenu as &$header){
 			if($header['link'] == $this->data['route']){
-		        $header['class'] = 'active';
+		        $header['class'] .= 'active';
 		    } else {
-		        $header['class'] = '';
+		        $header['class'] .= '';
 		    }
 		    if($header['link'] == '/'){
 		        $header['link'] = $this->data['base'];
@@ -104,14 +104,14 @@ $_['text_headermenu']                  = 'Footer menu';
                     if($sub_title['link'] == $this->data['route']){
 		            $header['class'] .= 'active';
 		            } else {
-		            $header['class'] = '';
+		            $header['class'] .= '';
 		            }
 		            if($sub_title['sub_title']){
 		                foreach($sub_title['sub_title'] as $subtitle){
-		                   if($sub_title['link'] == $this->data['route']){
+		                   if($subtitle['link'] == $this->data['route']){
 		                    $header['class'] .= 'active';
 		                    } else {
-		                    $header['class'] = '';
+		                    $header['class'] .= '';
 		                    }
 		                }
 		            }
