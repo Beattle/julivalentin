@@ -1,6 +1,3 @@
-<?php echo '<pre>' . print_r($route, true) . '</pre>';
-var_dump($route);
-?>
 <footer>
     <?php if ($logo) { ?>
         <div id="logo">
