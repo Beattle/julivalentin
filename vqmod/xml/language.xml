@@ -1,0 +1,48 @@
+<modification>
+	<id><![CDATA[modify language controller]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file path="admin/language/english/module/" name="banner.php">
+		<operation>
+			<search position="after"><![CDATA[$_['text_content_top']    = 'Content Top';]]></search>
+			<add><![CDATA[$_['text_content_left'] = 'Content Left';
+			$_['text_content_right'] = 'Content Right';]]></add>
+		</operation>
+	</file>
+    <file path="admin/language/russian/module/" name="banner.php">
+        <operation>
+            <search position="after"><![CDATA[$_['text_content_top']    = 'Верх страницы';]]></search>
+            <add><![CDATA[$_['text_content_left'] = 'Центр слева';
+            $_['text_content_right'] = 'Центр справа';]]></add>
+        </operation>
+    </file>
+    <file path="catalog/language/english/common/" name="footer.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['text_search'] = 'Search';]]></add>
+        </operation>
+    </file>
+    <file path="catalog/language/russian/common/" name="footer.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['text_search'] = 'Поиск';]]></add>
+        </operation>
+    </file>
+    <file path="admin/language/english/module/" name="blockhtml.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['text_footer_center'] = 'Footer Center';]]></add>
+        </operation>
+    </file>
+    <file path="admin/language/russian/module/" name="blockhtml.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['text_footer_center'] = 'Подвал Центр';]]></add>
+        </operation>
+    </file>
+</modification>
+
+
+
+

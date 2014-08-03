@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Header Menu</id>
+	<version>1.4.x and 1.5.x</version>
+	<vqmver required="true">2.4.0</vqmver>
+	<author>TMD(opencartextensions.in)</author>
+	<file name="admin/language/russian/common/header.php">
+		<operation error="log">
+			<search position="before"><![CDATA[// Text]]></search>
+			<add><![CDATA[
+			// HeaderManu
+$_['text_menu_bot']                  = 'Menu';
+$_['text_custommenu']                  = 'Bottom menu';
+			]]></add>
+		</operation>
+	</file>
+    <file name="admin/language/russian/common/header.php">
+        <operation error="log">
+            <search position="before"><![CDATA[// Text]]></search>
+            <add><![CDATA[
+			// HeaderManu
+$_['text_menu_bot']                  = 'Меню';
+$_['text_custommenu']                  = 'Нижнее меню';
+			]]></add>
+        </operation>
+    </file>
+	<file name="admin/controller/common/header.php">
+		<operation error="log">
+			<search position="after"><![CDATA[$this->data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[
+			
+			/////////HedaerMenu 
+			$this->data['text_custommenu'] = $this->language->get('text_custommenu');
+		$this->data['text_menu_bot'] = $this->language->get('text_menu_bot');
+		$this->data['custommenu'] = $this->url->link('catalog/custommenu', 'token=' . $this->session->data['token'], 'SSL');
+			///////// HedaerMenu
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/view/template/common/header.tpl">
+		<operation error="log">
+			<search position="before"><![CDATA[ <li id="system"><a class="top"><?php echo $text_system; ?></a>]]></search>
+			<add><![CDATA[ <li id="catalog"><a class="top"><?php echo $text_custommenu; ?></a>
+	   <ul>
+	   <li><a href="<?php echo $custommenu; ?>"><?php echo $text_menu_bot; ?></a></li>
+	  </ul>
+	  </li>
+			]]></add>
+		</operation>
+	
+	</file>	
+	
+	<file name="catalog/controller/common/footer.php">
+		<operation>
+			<search position="before"><![CDATA[
+				$this->data['text_information'] = $this->language->get('text_information');]]></search>
+			<add><![CDATA[
+			//$this->data['categories']= array();
+		//////////////////////////////Custommenu//////////////////////////////////
+		$this->load->model('catalog/custommenu');
+		($this->data['custommenu'] =$this->model_catalog_custommenu->getcustommenu());
+		////////////////////////////////////////////////////////////////
+		]]></add>
+		</operation>
+	</file>
+
+<!--    <file name="catalog/view/theme/*/template/common/footer.tpl">
+        <operation>
+            <search position="after"><![CDATA[<ul class="custommenu>">]]></search>
+            <add><![CDATA[
+
+		]]></add>
+        </operation>
+    </file>-->
+</modification>

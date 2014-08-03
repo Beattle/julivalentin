@@ -1,0 +1,52 @@
+<modification>
+	<id><![CDATA[modify footer controller]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file path="catalog/controller/common/" name="footer.php">
+		<operation>
+			<search position="after"><![CDATA[$this->language->load('common/footer');]]></search>
+			<add><![CDATA[
+					if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {
+			$server = $this->config->get('config_ssl');
+		} else {
+			$server = $this->config->get('config_url');
+		}
+
+		    $this->data['base'] = $server;
+
+			if ($this->config->get('config_logo') && file_exists(DIR_IMAGE . $this->config->get('config_logo'))) {
+        $this->data['logo'] = $server . 'image/' . $this->config->get('config_logo');
+        } else {
+        $this->data['logo'] = '';
+        }
+
+        $this->data['home'] = $this->url->link('common/home');
+        $this->data['name'] = $this->config->get('config_name');
+
+
+        ]]></add>
+		</operation>
+        <operation>
+            <search position="after"><![CDATA[$this->data['text_newsletter'] = $this->language->get('text_newsletter');]]></search>
+            <add><![CDATA[		if (isset($this->request->get['search'])) {
+			$this->data['search'] = $this->request->get['search'];
+		} else {
+			$this->data['search'] = '';
+		}
+		$this->data['text_search'] = $this->language->get('text_search');
+
+
+
+		]]></add>
+        </operation>
+       <operation>
+            <search position="before"><![CDATA[$this->render();]]></search>
+            <add><![CDATA[$this->children[] = 'common/footer_center';]]></add>
+        </operation>
+	</file>
+</modification>
+
+
+
+

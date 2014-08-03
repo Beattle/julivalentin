@@ -1,0 +1,29 @@
+<modification>
+	<id><![CDATA[modify custom Html ]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file path="admin/view/template/module/" name="blockhtml.tpl">
+		<operation>
+			<search position="after"><![CDATA[<td class="left"><select name="blockhtml_module[<?php echo $module_row; ?>][position]">]]></search>
+			<add><![CDATA[                <?php if ($module['position'] == 'footer_center') { ?>
+                <option value="footer_center" selected="selected"><?php echo $text_footer_center; ?></option>
+                <?php } else { ?>
+                <option value="footer_center"><?php echo $text_footer_center; ?></option>
+                <?php } ?> ]]></add>
+		</operation>
+        <operation>
+            <search position="after"><![CDATA[html += '    <td class="left"><select name="blockhtml_module[' + module_row + '][position]">';]]></search>
+            <add><![CDATA[html += '      <option value="footer_center"><?php echo $text_footer_center; ?></option>';]]></add>
+        </operation>
+	</file>
+    <file path="admin/controller/module/" name="blockhtml.php">
+        <operation>
+            <search position="after">$this->data['text_column_right'] = $this->language->get('text_column_right');</search>
+            <add>$this->data['text_footer_center'] = $this->language->get('text_footer_center');</add>
+        </operation>
+    </file>
+</modification>
+
+
+

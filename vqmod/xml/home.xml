@@ -1,0 +1,17 @@
+<modification>
+	<id><![CDATA[modify home controller]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file path="catalog/controller/common/" name="home.php">
+		<operation>
+			<search position="after"><![CDATA['common/content_top',]]></search>
+			<add><![CDATA['common/content_left',
+			'common/content_right',]]></add>
+		</operation>
+	</file>
+</modification>
+
+
+
+

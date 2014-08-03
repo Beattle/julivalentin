@@ -1,0 +1,49 @@
+<modification>
+	<id><![CDATA[modify banner]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file path="catalog/controller/module/" name="banner.php">
+		<operation>
+			<search position="after"><![CDATA[$this->data['module'] = $module++;]]></search>
+			<add><![CDATA[$this->data['setting'] = $setting;]]></add>
+		</operation>
+        <operation>
+            <search position="replace"><![CDATA[$this->document->addScript('catalog/view/javascript/jquery/jquery.cycle.js');]]></search>
+            <add><![CDATA[]]></add>
+        </operation>
+	</file>
+    <file path="admin/view/template/module/" name="banner.tpl">
+        <operation>
+            <search position="after"><![CDATA[<td class="left"><select name="banner_module[<?php echo $module_row; ?>][position]">]]></search>
+            <add><![CDATA[
+            <?php if ($module['position'] == 'content_left') { ?>
+                  <option value="content_left" selected="selected"><?php echo $text_content_left; ?></option>
+                  <?php } else { ?>
+                  <option value="content_left"><?php echo $text_content_left; ?></option>
+                  <?php } ?>
+            <?php if ($module['position'] == 'content_right') { ?>
+                  <option value="content_right" selected="selected"><?php echo $text_content_right; ?></option>
+                  <?php } else { ?>
+                  <option value="content_right"><?php echo $text_content_right; ?></option>
+                  <?php } ?>
+                  ]]></add>
+        </operation>
+        <operation>
+            <search position="after"><![CDATA[html += '      <option value="content_top"><?php echo $text_content_top; ?></option>';]]></search>
+            <add><![CDATA[html += '      <option value="content_left"><?php echo $text_content_left; ?></option>';
+             html += '      <option value="content_right"><?php echo $text_content_right;?></option>';]]></add>
+        </operation>
+    </file>
+    <file path="admin/controller/module/" name="banner.php">
+        <operation>
+            <search position="before"><![CDATA[$this->data['text_content_top'] = $this->language->get('text_content_top');]]></search>
+            <add><![CDATA[$this->data['text_content_left'] = $this->language->get('text_content_left');
+            $this->data['text_content_right'] = $this->language->get('text_content_right');]]></add>
+        </operation>
+    </file>
+</modification>
+
+
+
+

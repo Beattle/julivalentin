@@ -1,0 +1,777 @@
+<modification>
+	<id>AC CMS</id>
+	<version>2.3</version>
+	<vqmver>1.0.8</vqmver>
+	<author>Cyrus</author>
+	
+
+        <file name="catalog/controller/product/search.php">
+                <operation>
+			<search position="before" ><![CDATA[$this->data['text_search'] = $this->language->get('text_search');]]></search>
+			<add><![CDATA[$this->data['text_article_search'] = $this->language->get('text_article_search');]]></add>
+		</operation>
+                
+		<operation>
+			<search position="after" ><![CDATA[$this->language->load('product/search');]]></search>
+			<add><![CDATA[$this->language->load('ac_cms/search');]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/common/header.php">
+		<operation>
+			<search position="before" ><![CDATA[if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {]]></search>
+			<add><![CDATA[$this->load->model('ac_cms/article');
+                $this->load->model('ac_cms/category');
+                
+                $this->data['ac_cms_menu'] = array();
+                
+                if ($this->config->get('ac_cms_menu')) { 
+                    $ac_cms_menu_items = $this->config->get('ac_cms_menu');
+                }
+                
+                if(isset($ac_cms_menu_items) && is_array($ac_cms_menu_items))
+                {
+                    foreach ($ac_cms_menu_items as $ac_cms_menu_item){
+
+                        if($ac_cms_menu_item['status']==1)
+                        {
+                            if(in_array($ac_cms_menu_item['sort_order'], $this->sort_ord_temp2) || $ac_cms_menu_item['sort_order'] == ''){
+                                $sort = $this->get_sortNum(0);
+                            }else{
+                                $sort = $ac_cms_menu_item['sort_order'];
+                            }
+
+                            $this->sort_ord_temp2[] = $sort;
+                            
+                            if($ac_cms_menu_item['b_id'] == 0 && $ac_cms_menu_item['bc_id'] == 0)
+                            {
+                                $global_settings = $this->config->get('ac_cms_gs_' . (int)$this->config->get('config_store_id'));
+                                $lang_id = $this->config->get('config_language_id');
+                                $this->data['ac_cms_menu'][$sort] = array(
+                                        'name' => $global_settings['desc'][$lang_id]['blog_name'],
+                                        'children' => array(),
+                                        'href' => $this->url->link('ac_cms/blog')
+                                ); 
+                            }
+                            elseif($ac_cms_menu_item['b_id']==0)
+                            {
+                                $limit = (isset($ac_cms_menu_item['limit']))?$ac_cms_menu_item['limit']:false;
+                                $articles_a = array();
+                                
+                                if($limit !== '0') 
+                                {
+                                    $data = array(
+                                        'category'=>$ac_cms_menu_item['bc_id'], 
+                                        'sort_order'=>'ASC', 
+                                        'sort_by' => '3',
+                                        'art_amount' => $limit
+                                    ); 
+
+                                    if($this->customer->isLogged())
+                                    {
+                                        $data['access_level'] = 1;
+                                    }
+                                    else
+                                    {
+                                        $data['access_level'] = 0;
+                                    }
+
+                                    $articles_a = $this->model_ac_cms_article->getArticles($data);
+                                }
+                                $chd = array();
+                                if(!empty($articles_a))
+                                {
+                                    foreach ($articles_a as $value)
+                                    {
+                                        $chd[] = array(
+                                            'name'=>$value['title'],
+                                            'href'=>$this->url->link('ac_cms/article', 'ac_path=' .$ac_cms_menu_item['bc_id']. '&b_id=' . $value['b_id'])
+                                            );   
+                                    }
+                                }
+                                $cat_name = $this->model_ac_cms_category->getCategoryNameById($ac_cms_menu_item['bc_id']);
+                                if(!empty($cat_name))
+                                {
+                                    $this->data['ac_cms_menu'][$sort] = array(
+                                            'name' => $cat_name,
+                                            'children' => $chd,
+                                            'column' => (!empty($ac_cms_menu_item['column'])) ? $ac_cms_menu_item['column'] : 1,
+                                            'href' => $this->url->link('ac_cms/category', 'ac_path=' . $ac_cms_menu_item['bc_id'])
+                                    );
+                                }
+                                
+                            }
+                            else
+                            {
+                                $article = $this->model_ac_cms_article->getArticle($ac_cms_menu_item['b_id'], ($this->customer->isLogged()) ? 1 : 0);
+                                if(!empty($article)){
+                                    $this->data['ac_cms_menu'][$sort] = array(
+                                            'name' => $article['title'],
+                                            'children' => array(),
+                                            'href' => $this->url->link('ac_cms/article', 'ac_path=' .$ac_cms_menu_item['bc_id']. '&b_id=' . $ac_cms_menu_item['b_id'])
+                                    ); 
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                $combined = array();
+                rsort($this->sort_ord_temp2);
+                $last_sort = (isset($this->sort_ord_temp2[0]))? (int)$this->sort_ord_temp2[0] : 0;
+                $summ = count($this->data['categories'])+count($this->data['ac_cms_menu'])+$last_sort;
+                
+                for($x = 0; $x <= $summ; $x++)
+                {
+                    if((isset($this->data['ac_cms_menu'][$x])))
+                    {
+                        $combined[$x] = $this->data['ac_cms_menu'][$x];
+                        $this->sort_ord_temp2[]=$x;
+                    } 
+                    
+                    if(isset($this->data['categories'][$x]))
+                    {
+                        $nx = $this->get_sortNum($x);
+                        $combined[$nx] = $this->data['categories'][$x];
+                        $this->sort_ord_temp2[]=$nx;
+                    }
+                }
+                
+                ksort($combined);
+                $this->data['categories'] = $combined;]]></add>
+		</operation>
+                
+                <operation>
+			<search position="replace" offset="1" ><![CDATA[$this->render();]]></search>
+			<add><![CDATA[$this->render();
+	}
+        
+        private $sort_ord_temp2 = array();
+        private $sort_free = 0;
+        
+        private function get_sortNum($num)
+        {
+            if(in_array($num, $this->sort_ord_temp2)){
+                     $this->get_sortNum($num + 1);
+            }
+            else{
+                $this->sort_free = $num;
+            }
+            
+            return $this->sort_free;
+        }]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/common/seo_url.php">
+                <operation>
+			<search position="after" index="1" offset="3"><![CDATA[if ($this->config->get('config_seo_url')) {]]></search>
+			<add><![CDATA[
+                if(isset($this->request->get["_route_"]))
+                {
+                        
+                        $ac_parts = explode('/', $this->request->get['_route_']);
+                        foreach ($ac_parts as $ac_part) {
+                        
+                        if($ac_part == 'blog')
+                        {
+                            $this->request->get['route'] = 'ac_cms/blog';
+                        }
+                        elseif($this->request->get['_route_'] == 'blog/rss.xml')
+                        {
+                            $this->request->get['route'] = 'ac_cms/blog/rss';
+                        }
+                        else{
+                            $ac_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE keyword = '" . $this->db->escape($ac_part) . "'");
+                            if ($ac_query->num_rows) 
+                            {
+                                $ac_url = explode('=', $ac_query->row['query']);
+
+                                if ($ac_url[0] == 'b_id') 
+                                {
+                                    $this->request->get['b_id'] = $ac_url[1];
+                                }
+
+                                if ($ac_url[0] == 'bc_id') {
+                                    if (!isset($this->request->get['ac_path'])) {
+                                            $this->request->get['ac_path'] = $ac_url[1];
+                                    } else {
+                                            $this->request->get['ac_path'] .= '_' . $ac_url[1];
+                                    }
+                                }
+                            }
+                            else 
+                            {
+                                $this->request->get['route'] = "error/not_found";	
+                            }
+                        }
+                    }
+                    
+                    
+                    if (isset($this->request->get['b_id'])) 
+                    {
+                        $this->request->get['route'] = 'ac_cms/article';
+                    } 
+                    elseif (isset($this->request->get['ac_path'])) 
+                    {
+                        if($ac_part == 'rss.xml'){
+                            $this->request->get['route'] = 'ac_cms/category/rss';
+                        } elseif ($ac_part == 'archive') {
+                            $this->request->get['route'] = 'ac_cms/category/archive';
+                        } else {
+                            $this->request->get['route'] = 'ac_cms/category';
+                        }
+                    }
+                    
+                    if (isset($this->request->get['route'])) {
+                            return $this->forward($this->request->get['route']);
+                    }
+                
+                }
+                        ]]></add>
+		</operation>
+                
+                <operation>
+			<search position="after" ><![CDATA[public function rewrite($link) {]]></search>
+			<add><![CDATA[
+                        if(preg_match('/ac_cms/', $link) && $this->config->get('config_seo_url')){
+                        $ac_link = & $link;
+                        
+                        $ac_url_info = parse_url(str_replace('&amp;', '&', $ac_link));
+
+                        $ac_url = ''; 
+
+                        $ac_data = array();
+
+                        parse_str($ac_url_info['query'], $ac_data);
+
+                        foreach ($ac_data as $key => $value) {
+                            if($ac_data[$key] == 'ac_cms/blog'){
+                                $ac_url .= '/blog';
+                            }elseif($ac_data[$key] == 'ac_cms/blog/rss'){
+                                $ac_url .= '/blog/rss.xml';
+                            }elseif ($key == 'b_id'){
+
+                                $ac_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = '" . $this->db->escape($key . '=' . (int)$value) . "'");
+
+                                if ($ac_query->num_rows) {
+                                            $ac_url .= '/' . $ac_query->row['keyword'];
+                                            unset($ac_data[$key]);
+                                }
+
+                            }elseif ($key == 'ac_path') {
+                                    $cms_categories = explode('_', $value);
+                                    $count = 0;
+                                    if(is_array($cms_categories)){
+                                        $count = count($cms_categories);
+                                    }
+                                    $i = 1;
+                                    foreach ($cms_categories as $cms_category) {
+                                            $ac_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'bc_id=" . (int)$cms_category . "'");
+
+                                            if (($ac_query->num_rows) && ($ac_data['route'] == 'ac_cms/category/rss') && ($i == $count)) {
+                                                    $ac_url .= '/' . $ac_query->row['keyword'] . '/rss.xml';
+                                            }elseif(($ac_query->num_rows) && ($ac_data['route'] == 'ac_cms/category/archive') && ($i == $count)) {
+                                                    $ac_url .= '/' . $ac_query->row['keyword'] . '/archive';
+                                            } elseif($ac_query->num_rows) {
+                                                    $ac_url .= '/' . $ac_query->row['keyword'];
+                                            }
+                                            $i++;
+                                    }
+
+                                    unset($ac_data[$key]);
+                            }
+                        }
+
+                        if ($ac_url) {
+                                unset($ac_data['route']);
+
+                                $ac_query = '';
+
+                                if ($ac_data) {
+                                        foreach ($ac_data as $key => $value) {
+                                                $ac_query .= '&' . $key . '=' . $value;
+                                        }
+
+                                        if ($ac_query) {
+                                                $ac_query = '?' . trim($ac_query, '&');
+                                        }
+                                }
+
+                                return $ac_url_info['scheme'] . '://' . $ac_url_info['host'] . (isset($ac_url_info['port']) ? ':' . $ac_url_info['port'] : '') . str_replace('/index.php', '', $ac_url_info['path']) . $ac_url . $ac_query;
+                        } else {
+                                return $ac_link;
+                        }
+                    }
+                        ]]>
+                        </add>              
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/information/sitemap.php">
+                <operation>
+			<search position="before" ><![CDATA[$this->data['text_special'] = $this->language->get('text_special');]]></search>
+			<add><![CDATA[
+                $this->load->model('ac_cms/category');
+                
+                $this->data['ac_cms_categories'] = array();
+					
+		$categories_1 = $this->model_ac_cms_category->getCategories(0);
+		
+		foreach ($categories_1 as $category_1) {
+			$level_2_data = array();
+			
+			$categories_2 = $this->model_ac_cms_category->getCategories($category_1['bc_id']);
+			
+			foreach ($categories_2 as $category_2) {
+				$level_3_data = array();
+				
+				$categories_3 = $this->model_ac_cms_category->getCategories($category_2['bc_id']);
+				
+				foreach ($categories_3 as $category_3) {
+					$level_3_data[] = array(
+						'name' => $category_3['name'],
+						'href' => $this->url->link('product/category', 'ac_path=' . $category_1['bc_id'] . '_' . $category_2['bc_id'] . '_' . $category_3['bc_id'])
+					);
+				}
+				
+				$level_2_data[] = array(
+					'name'     => $category_2['name'],
+					'children' => $level_3_data,
+					'href'     => $this->url->link('ac_cms/category', 'ac_path=' . $category_1['bc_id'] . '_' . $category_2['bc_id'])	
+				);					
+			}
+			
+			$this->data['ac_cms_categories'][] = array(
+				'name'     => $category_1['name'],
+				'children' => $level_2_data,
+				'href'     => $this->url->link('ac_cms/category', 'ac_path=' . $category_1['bc_id'])
+			);
+		}
+                
+		]]></add>
+		</operation>
+	</file>
+                        
+        <file name="catalog/controller/common/column_right.php">
+		<operation>
+			<search position="before" ><![CDATA[if (isset($this->request->get['route'])) {]]></search>
+			<add><![CDATA[$this->load->model('ac_cms/article');
+                $this->load->model('ac_cms/category');]]></add>
+		</operation>
+                
+                <operation>
+			<search position="after" ><![CDATA[$layout_id = 0;]]></search>
+			<add><![CDATA[if (substr($route, 0, 15) == 'ac_cms/category' && isset($this->request->get['ac_path'])) {
+			$path = explode('_', (string)$this->request->get['ac_path']);
+				
+			$layout_id = $this->model_ac_cms_category->getCategoryLayoutId(end($path));			
+		}
+                
+                if (substr($route, 0, 14) == 'ac_cms/article' && isset($this->request->get['b_id'])) {
+				
+			$layout_id = $this->model_ac_cms_article->getArticleLayoutId($this->request->get['b_id']);			
+		}]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/common/column_left.php">
+		<operation>
+			<search position="before" ><![CDATA[if (isset($this->request->get['route'])) {]]></search>
+			<add><![CDATA[$this->load->model('ac_cms/article');
+                $this->load->model('ac_cms/category');]]></add>
+		</operation>
+                
+                <operation>
+			<search position="after" ><![CDATA[$layout_id = 0;]]></search>
+			<add><![CDATA[if (substr($route, 0, 15) == 'ac_cms/category' && isset($this->request->get['ac_path'])) {
+			$path = explode('_', (string)$this->request->get['ac_path']);
+				
+			$layout_id = $this->model_ac_cms_category->getCategoryLayoutId(end($path));			
+		}
+                
+                if (substr($route, 0, 14) == 'ac_cms/article' && isset($this->request->get['b_id'])) {
+				
+			$layout_id = $this->model_ac_cms_article->getArticleLayoutId($this->request->get['b_id']);			
+		}]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/common/content_bottom.php">
+		<operation>
+			<search position="before" ><![CDATA[if (isset($this->request->get['route'])) {]]></search>
+			<add><![CDATA[$this->load->model('ac_cms/article');
+                $this->load->model('ac_cms/category');]]></add>
+		</operation>
+                
+                <operation>
+			<search position="after" ><![CDATA[$layout_id = 0;]]></search>
+			<add><![CDATA[if (substr($route, 0, 15) == 'ac_cms/category' && isset($this->request->get['ac_path'])) {
+			$path = explode('_', (string)$this->request->get['ac_path']);
+				
+			$layout_id = $this->model_ac_cms_category->getCategoryLayoutId(end($path));			
+		}
+                
+                if (substr($route, 0, 14) == 'ac_cms/article' && isset($this->request->get['b_id'])) {
+				
+			$layout_id = $this->model_ac_cms_article->getArticleLayoutId($this->request->get['b_id']);			
+		}]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/common/content_top.php">
+		<operation>
+			<search position="before" ><![CDATA[if (isset($this->request->get['route'])) {]]></search>
+			<add><![CDATA[$this->load->model('ac_cms/article');
+                $this->load->model('ac_cms/category');]]></add>
+		</operation>
+                
+                <operation>
+			<search position="after" ><![CDATA[$layout_id = 0;]]></search>
+			<add><![CDATA[if (substr($route, 0, 15) == 'ac_cms/category' && isset($this->request->get['ac_path'])) {
+			$path = explode('_', (string)$this->request->get['ac_path']);
+				
+			$layout_id = $this->model_ac_cms_category->getCategoryLayoutId(end($path));			
+		}
+                
+                if (substr($route, 0, 14) == 'ac_cms/article' && isset($this->request->get['b_id'])) {
+				
+			$layout_id = $this->model_ac_cms_article->getArticleLayoutId($this->request->get['b_id']);			
+		}]]></add>
+		</operation>
+	</file>
+        
+        <file name="admin/controller/common/header.php">
+		<operation>
+			<search position="after" ><![CDATA[$this->data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[$this->data['ac_cms'] = $this->url->link('ac_cms/control_panel', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+		</operation>
+	</file>
+        
+        <file name="admin/view/template/common/header.tpl">
+		<operation>
+			<search position="after" ><![CDATA[<li id="dashboard"><a href="<?php echo $home; ?>" class="top"><?php echo $text_dashboard; ?></a></li>]]></search>
+			<add><![CDATA[<li id="dashboard"><a href="<?php echo $ac_cms; ?>" class="top">AC CMS</a></li>]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/feed/google_sitemap.php">
+		<operation>
+			<search position="before" ><![CDATA[$output .= '</urlset>';]]></search>
+			<add><![CDATA[$this->load->model('ac_cms/article');
+                            $articles = $this->model_ac_cms_article->getArticles(array('access_level' => ($this->customer->isLogged()) ? 1 : 0));
+
+                            foreach ($articles as $article) {
+                                    $output .= '<url>';
+                                    $output .= '<loc>' . str_replace('&', '&amp;', $this->url->link('ac_cms/article', 'b_id=' . $article['b_id'])) . '</loc>';
+                                    $output .= '<changefreq>weekly</changefreq>';
+                                    $output .= '<priority>1.0</priority>';
+                                    $output .= '</url>';   
+                            }
+                            $this->load->model('ac_cms/category');
+                            $output .= $this->getArticleCategories(0);]]>
+                        </add>
+		</operation>
+                
+                <operation>
+			<search position="before" ><![CDATA[protected function getCategories($parent_id, $current_path = '') {]]></search>
+			<add><![CDATA[protected function getArticleCategories($parent_id, $current_path = '') {
+                            $output = '';
+
+                            $results = $this->model_ac_cms_category->getCategories($parent_id);
+
+                            foreach ($results as $result) {
+                                    if (!$current_path) {
+                                            $new_path = $result['bc_id'];
+                                    } else {
+                                            $new_path = $current_path . '_' . $result['bc_id'];
+                                    }
+
+                                    $output .= '<url>';
+                                    $output .= '<loc>' . str_replace('&', '&amp;', $this->url->link('ac_cms/category', 'ac_path=' . $new_path)) . '</loc>';
+                                    $output .= '<changefreq>weekly</changefreq>';
+                                    $output .= '<priority>0.7</priority>';
+                                    $output .= '</url>';         
+
+                                    $articles = $this->model_ac_cms_article->getArticles(array('category' => $result['bc_id'], 'access_level' => ($this->customer->isLogged()) ? 1 : 0));
+
+                                    foreach ($articles as $article) {
+                                            $output .= '<url>';
+                                            $output .= '<loc>' . str_replace('&', '&amp;', $this->url->link('ac_cms/article', 'ac_path=' . $new_path . '&b_id=' . $article['b_id'])) . '</loc>';
+                                            $output .= '<changefreq>weekly</changefreq>';
+                                            $output .= '<priority>1.0</priority>';
+                                            $output .= '</url>';   
+                                    }   
+
+                                    $output .= $this->getArticleCategories($result['bc_id'], $new_path);
+                            }
+
+                            return $output;
+                            }]]>
+                        </add>
+		</operation>
+	</file>
+        <file name="catalog/controller/product/product.php">
+		<operation>
+			<search position="after" ><![CDATA[$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);]]></search>
+			<add><![CDATA[$this->language->load('ac_cms/misc');
+                        $this->data['text_related_articles'] = $this->language->get('text_related_articles');
+                        $results_ra = $this->model_catalog_product->getArticleRelated($this->request->get['product_id'], ($this->customer->isLogged()) ? 1 : 0);
+                        $this->data['related_articles'] = array();
+                        foreach($results_ra as $ra)
+                        {
+                            $this->data['related_articles'][] = array(
+                                'title' => $ra['title'],
+                                'image' => $ra['image'],
+                                'href'  => $this->url->link('ac_cms/article', 'b_id=' . $ra['b_id'])
+                            );
+                        }]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/model/catalog/product.php">
+		<operation>
+			<search position="before" ><![CDATA[public function getProducts($data = array()) {]]></search>
+			<add><![CDATA[public function getArticleRelated($product_id, $access_level = 0) {
+
+            $sql = "SELECT bd.title, b.image, b.b_id FROM " . DB_PREFIX . "ac_cms_related_product pr LEFT JOIN " . DB_PREFIX . "ac_cms_article b ON (pr.b_id = b.b_id) "; 
+            $sql .= "LEFT JOIN " . DB_PREFIX . "ac_cms_article_to_store b2s ON (b.b_id = b2s.b_id) "; 
+            $sql .= "LEFT JOIN " . DB_PREFIX . "ac_cms_article_description  bd ON pr.b_id = bd.b_id ";
+            $sql .= "WHERE pr.related_id = '" . (int)$product_id . "' AND bd.language_id = '" . (int)$this->config->get('config_language_id'). "' AND b.status = '1' AND ((b.date_active = '0000-00-00' "; 
+            $sql .= "OR b.date_active < NOW()) AND access_level <= '" .(int)$access_level. "' AND (b.date_expr = '0000-00-00' OR b.date_expr > NOW())) "; 
+            $sql .= "AND b2s.store_id = '" . (int)$this->config->get('config_store_id') . "' GROUP BY pr.b_id";
+
+            $query = $this->db->query($sql);
+
+            return $query->rows;
+	}]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/controller/common/header.php">
+            <operation>
+                    <search position="after" ><![CDATA[protected function index() {]]></search>
+                    <add><![CDATA[
+                    $global_settings = $this->config->get('ac_cms_gs_' . (int)$this->config->get('config_store_id'));
+                    //Comment engine
+                    if(isset($global_settings['comment_engine'])){
+                        $this->data['comment_engine'] = $global_settings['comment_engine'];
+                    } else {
+                        $this->data['comment_engine'] = 0;
+                    }
+
+                    //Facebook ID
+                    if(isset($global_settings['facebook_admins'])){
+                        $this->data['facebook_admins'] = $global_settings['facebook_admins'];
+                    } else {
+                        $this->data['facebook_admins'] = false;
+                    }
+
+                    ]]></add>
+            </operation>
+	</file>
+        
+        <file name="catalog/controller/common/footer.php">
+            <operation>
+                    <search position="after" ><![CDATA[protected function index() {]]></search>
+                    <add><![CDATA[
+                    $global_settings = $this->config->get('ac_cms_gs_' . (int)$this->config->get('config_store_id'));
+                    //Comment engine
+                    if(isset($global_settings['comment_engine'])){
+                        $this->data['comment_engine'] = $global_settings['comment_engine'];
+                    } else {
+                        $this->data['comment_engine'] = 0;
+                    }
+                    
+                    //Disqus Shortname
+                    if(isset($global_settings['disqus_id'])){
+                        $this->data['disqus_id'] = $global_settings['disqus_id'];
+                    } else {
+                        $this->data['disqus_id'] = false;
+                    }
+                    
+                    //Disqus Force Lang
+                    if(isset($global_settings['disqus_force_lang'])){
+                        $this->data['disqus_force_lang'] = $global_settings['disqus_force_lang'];
+                    } else {
+                        $this->data['disqus_force_lang'] = 0;
+                    }
+                    ]]></add>
+            </operation>
+	</file>
+        
+        <!-- THEME MODIFICATIONS -->
+        <file name="catalog/view/theme/default/template/product/product.tpl">
+		<operation>
+			<search position="before" ><![CDATA[<?php echo $content_bottom; ?></div>]]></search>
+			<add><![CDATA[<?php if($related_articles) { ?>
+                            <div style="margin: 15px 0 5px 0; font-size: 13px;font-weight: bold;"><?php echo $text_related_articles; ?></div>
+                            <?php foreach ($related_articles as $ra) { ?>
+                            <a href="<?php echo $ra['href']; ?>" ><?php echo $ra['title']; ?></a><br />
+                        <?php } ?><br />
+                        <?php } ?>]]></add>
+		</operation>
+	</file>
+        
+        <file name="catalog/view/theme/default/template/product/search.tpl">
+		<operation>
+			<search position="replace" offset="2" ><![CDATA[<div class="buttons">]]></search>
+			<add>
+                             <![CDATA[<div class="buttons"><div class="right"><a onclick="searchurl('index.php?route=product/search', true)" id="button-search" class="button"><span><?php echo $button_search; ?></span></a></div>
+                             <div class="right"><a onclick="searchurl('index.php?route=ac_cms/search', false)" id="button-search-article" class="button"><span><?php echo $text_article_search; ?></span></a>&nbsp;</div></div>]]>
+                        </add>
+                        
+		</operation>
+                
+                <operation>
+			<search position="replace" ><![CDATA[$('#button-search').bind('click', function() {]]></search>
+			<add>
+                             <![CDATA[function searchurl(url, flag) {]]>
+                        </add>
+		</operation>
+                
+                <operation error="skip">
+			<search position="replace" offset="5" ><![CDATA[var filter_category_id = $('#content select[name=\'filter_category_id\']').attr('value');]]></search>
+			<add>
+                             <![CDATA[if(flag)
+                            {
+                                var filter_category_id = $('#content select[name=\'filter_category_id\']').attr('value');
+
+                                if (filter_category_id > 0) {
+                                        url += '&filter_category_id=' + encodeURIComponent(filter_category_id);
+                                }
+                            }]]>
+                        </add>
+		</operation>
+                
+                <operation error="skip">
+			<search position="replace" offset="5" ><![CDATA[var category_id = $('#content select[name=\'category_id\']').attr('value');]]></search>
+			<add>
+                             <![CDATA[if(flag)
+                            {
+                                var filter_category_id = $('#content select[name=\'category_id\']').attr('value');
+
+                                if (filter_category_id > 0) {
+                                        url += '&filter_category_id=' + encodeURIComponent(filter_category_id);
+                                }
+                            }]]>
+                        </add>
+		</operation>
+                
+                <operation>
+			<search position="replace"><![CDATA[url = 'index.php?route=product/search';]]></search>
+			<add>
+                             <![CDATA[//url = 'index.php?route=product/search';]]>
+                        </add>
+		</operation>
+                
+                <operation>
+			<search position="replace" offset="2" ><![CDATA[location = url;]]></search>
+			<add>
+                             <![CDATA[location = url; }]]>
+                        </add>
+		</operation>
+	</file>
+        
+        <file name="catalog/view/theme/default/template/information/sitemap.tpl">
+                <operation>
+			<search position="replace" offset="4" ><![CDATA[<li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>]]></search>
+			<add><![CDATA[<li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                            </div>
+                            <div class="right">
+                            <ul>
+                                <?php foreach ($ac_cms_categories as $cat_1) { ?>
+                                <li><a href="<?php echo $cat_1['href']; ?>"><?php echo $cat_1['name']; ?></a>
+                                <?php if ($cat_1['children']) { ?>
+                                <ul>
+                                    <?php foreach ($cat_1['children'] as $cat_2) { ?>
+                                    <li><a href="<?php echo $cat_2['href']; ?>"><?php echo $cat_2['name']; ?></a>
+                                    <?php if ($cat_2['children']) { ?>
+                                    <ul>
+                                        <?php foreach ($cat_2['children'] as $cat_3) { ?>
+                                        <li><a href="<?php echo $cat_3['href']; ?>"><?php echo $cat_3['name']; ?></a></li>
+                                        <?php } ?>
+                                    </ul>
+                                    <?php } ?>
+                                    </li>
+                                    <?php } ?>
+                                </ul>
+                                <?php } ?>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                            </div>]]>
+                        </add>
+		</operation>
+	</file>
+        
+        <!-- DISQUS Comment Count -->
+        <file name="catalog/view/theme/default/template/common/footer.tpl">
+            <operation>
+                    <search position="before" ><![CDATA[</body>]]></search>
+                    <add><![CDATA[
+                    <script type="text/javascript"><!--
+                    <?php if($comment_engine == 2 && $disqus_id) { ?>
+                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                        var disqus_shortname = "<?php echo $disqus_id; ?>"; // required: replace example with your forum shortname
+                        <?php if(!empty($disqus_force_lang)) { ?>
+                            var disqus_config = function () {
+                                this.language = "<?php $this->config->get('config_language'); ?>";
+                                request
+                            }; 
+                        <?php } ?>
+                        function DqCount(){
+                            /* * * DON'T EDIT BELOW THIS LINE * * */
+                            (function () {
+                                var s = document.createElement('script'); s.async = true;
+                                s.type = 'text/javascript';
+                                s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                            }());
+                        }
+                    DqCount();
+                    <?php } ?>
+                    //--></script> 
+                    ]]></add>
+            </operation>
+	</file>
+        
+        <!-- Facebook Comment System -->
+        <file name="catalog/view/theme/default/template/common/header.tpl">
+            <operation error="skip">
+                    <search position="replace" ><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml" dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" xml:lang="<?php echo $lang; ?>">]]></search>
+                    <add><![CDATA[<html <?php if($comment_engine == 1){ ?>xmlns:fb="http://ogp.me/ns/fb#"<?php } ?> xmlns="http://www.w3.org/1999/xhtml" dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" xml:lang="<?php echo $lang; ?>">]]></add>
+            </operation>
+            
+            <operation>
+                    <search position="after" ><![CDATA[<head>]]></search>
+                    <add><![CDATA[
+                    <?php if($comment_engine == 1 && $facebook_admins){ ?>
+                    <meta property="fb:admins" content="<?php echo $facebook_admins; ?>"/>
+                    <?php } ?>
+                    ]]></add>
+            </operation>
+            
+            <operation>
+                    <search position="after" ><![CDATA[<body>]]></search>
+                    <add><![CDATA[
+                    <?php if($comment_engine == 1) { ?>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                    <?php } ?>
+                    ]]></add>
+            </operation>
+	</file>
+        
+        <!-- THEME MODIFICATIONS END -->
+
+</modification>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Header Menu</id>
+	<version>1.4.x and 1.5.x</version>
+	<vqmver required="true">2.4.0</vqmver>
+	<author>TMD(opencartextensions.in)</author>
+	<file name="admin/language/russian/common/header.php">
+		<operation error="log">
+			<search position="before"><![CDATA[// Text]]></search>
+			<add><![CDATA[
+			// HeaderManu
+$_['text_menu']                  = 'Меню';
+$_['text_headermenu']                  = 'Основное меню';
+			]]></add>
+		</operation>
+	</file>
+
+    <file name="admin/language/english/common/header.php">
+        <operation error="log">
+            <search position="before"><![CDATA[// Text]]></search>
+            <add><![CDATA[
+			// HeaderManu
+$_['text_menu']                  = 'Menu';
+$_['text_headermenu']                  = 'Footer menu';
+			]]></add>
+        </operation>
+    </file>
+
+	<file name="admin/controller/common/header.php">
+		<operation error="log">
+			<search position="after"><![CDATA[$this->data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[
+			
+			/////////HedaerMenu 
+			$this->data['text_headermenu'] = $this->language->get('text_headermenu');
+		$this->data['text_menu'] = $this->language->get('text_menu'); 
+		$this->data['headermenu'] = $this->url->link('catalog/headermenu', 'token=' . $this->session->data['token'], 'SSL');
+			///////// HedaerMenu
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/view/template/common/header.tpl">
+		<operation error="log">
+			<search position="before"><![CDATA[ <li id="system"><a class="top"><?php echo $text_system; ?></a>]]></search>
+			<add><![CDATA[ <li id="catalog"><a class="top"><?php echo $text_headermenu; ?></a>
+	   <ul>
+	   <li><a href="<?php echo $headermenu; ?>"><?php echo $text_menu; ?></a></li>
+	  </ul>
+	  </li>
+			]]></add>
+		</operation>
+	
+	</file>	
+	
+	<file name="catalog/controller/common/footer.php">
+		<operation>
+			<search position="before"><![CDATA[
+				$this->data['text_information'] = $this->language->get('text_information');]]></search>
+			<add><![CDATA[
+
+			           if (isset($this->request->get['_route_'])){
+            $this->data['route'] = $this->request->get['_route_'];
+        }
+
+        elseif(isset($this->request->get['route']) && $this->request->get['route'] == 'common/home'){
+           $this->data['route'] = '/';
+        }
+
+        elseif(isset($this->request->get['route'])){
+            $this->data['route'] = $this->request->get['route'];
+        }
+
+        else{$this->data['route'] = '/';
+        }
+        	if (isset($this->request->get['path'])) {
+			$this->data['path'] = $this->request->get['path'];
+			}
+
+			if (isset($this->request->get['product_id'])) {
+			$product_id = (int)$this->request->get['product_id'];
+			} else {
+			$product_id = '';
+		    }
+		    $this->data['product_id'] = $product_id;
+
+		//////////////////////////////HeaderMenu//////////////////////////////////
+		$this->load->model('catalog/headermenu');
+		$headermenu =$this->model_catalog_headermenu->getHeadermenu();
+
+		foreach ($headermenu as &$header){
+			if($header['link'] == $this->data['route']){
+		        $header['class'] = 'active';
+		    } else {
+		        $header['class'] = '';
+		    }
+		    if($header['link'] == '/'){
+		        $header['link'] = $this->data['base'];
+		    }
+
+		    if($header['sub_title']){
+                $header['class'] .=' parent';
+                foreach ($header['sub_title'] as $sub_title){
+                    if($sub_title['link'] == $this->data['route']){
+		            $header['class'] .= 'active';
+		            } else {
+		            $header['class'] = '';
+		            }
+		            if($sub_title['sub_title']){
+		                foreach($sub_title['sub_title'] as $subtitle){
+		                   if($sub_title['link'] == $this->data['route']){
+		                    $header['class'] .= 'active';
+		                    } else {
+		                    $header['class'] = '';
+		                    }
+		                }
+		            }
+                }
+		    }
+
+
+		}
+
+		$this->data['headermenu'] = $headermenu;
+		////////////////////////////////////////////////////////////////
+		]]></add>
+		</operation>
+	</file>
+<!--	<file name="catalog/view/theme/*/template/common/footer.tpl">
+		<operation>
+			<search position="repalce"><![CDATA[
+				<?php foreach ($categories as $category) { ?>]]></search>
+			<add><![CDATA[
+
+			<?php foreach ($categories as $category) { ?>
+		]]></add>
+		</operation>
+	</file>-->
+
+</modification>

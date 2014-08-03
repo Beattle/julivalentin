@@ -1,0 +1,50 @@
+2014-07-13 0:47:05 - PHP Notice:  Undefined variable: filter_name in /var/www/hipno/data/www/test.com/jv/catalog/view/theme/jv/template/common/header.tpl on line 85
+2014-07-13 0:48:50 - PHP Notice:  Undefined variable: filter_name in /var/www/hipno/data/www/test.com/jv/catalog/view/theme/jv/template/common/header.tpl on line 85
+2014-07-27 18:28:11 - PHP Notice:  Undefined variable: server in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_common_footer.php on line 29
+2014-07-27 18:28:15 - PHP Notice:  Undefined variable: server in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_common_footer.php on line 29
+2014-07-28 10:26:53 - PHP Notice:  Undefined variable: headermenu in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_view_theme_jv_template_common_footer.tpl on line 13
+2014-07-28 10:26:53 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_view_theme_jv_template_common_footer.tpl on line 13
+2014-07-28 10:29:45 - PHP Notice:  Undefined variable: headermenu in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_view_theme_jv_template_common_footer.tpl on line 13
+2014-07-28 10:29:45 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_view_theme_jv_template_common_footer.tpl on line 13
+2014-07-28 15:09:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 182
+2014-07-28 15:09:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 183
+2014-07-28 15:09:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 186
+2014-07-28 15:09:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 187
+2014-07-28 15:09:16 - PHP Notice:  Error: Could not load language ! in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-system_library_language.php on line 39
+2014-07-28 15:09:16 - PHP Notice:  Undefined index:  in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_module_welcome.php on line 7
+2014-07-28 15:09:16 - PHP Notice:  Undefined index:  in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_module_welcome.php on line 9
+2014-07-28 15:11:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 182
+2014-07-28 15:11:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 183
+2014-07-28 15:11:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 186
+2014-07-28 15:11:16 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 187
+2014-07-28 15:11:16 - PHP Notice:  Error: Could not load language ! in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-system_library_language.php on line 39
+2014-07-28 15:11:16 - PHP Notice:  Undefined index:  in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_module_welcome.php on line 7
+2014-07-28 15:11:16 - PHP Notice:  Undefined index:  in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_module_welcome.php on line 9
+2014-07-28 15:11:22 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 182
+2014-07-28 15:11:22 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 183
+2014-07-28 15:11:22 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 186
+2014-07-28 15:11:22 - PHP Notice:  Undefined index: ru in /var/www/hipno/data/www/test.com/jv/index.php on line 187
+2014-07-28 15:11:22 - PHP Notice:  Error: Could not load language ! in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-system_library_language.php on line 39
+2014-07-28 15:11:22 - PHP Notice:  Undefined index:  in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_module_welcome.php on line 7
+2014-07-28 15:11:22 - PHP Notice:  Undefined index:  in /var/www/hipno/data/www/test.com/jv/vqmod/vqcache/vq2-catalog_controller_module_welcome.php on line 9
+2014-07-29 11:51:32 - PHP Notice:  Undefined index: list in /var/www/hipno/data/www/test.com/jv/admin/controller/module/pavmegamenubase.php on line 262
+2014-07-29 11:51:32 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/hipno/data/www/test.com/jv/admin/model/menu/megamenu.php on line 148
+2014-07-29 11:51:34 - PHP Notice:  Undefined index: list in /var/www/hipno/data/www/test.com/jv/admin/controller/module/pavmegamenubase.php on line 262
+2014-07-29 11:51:34 - PHP Warning:  Invalid argument supplied for foreach() in /var/www/hipno/data/www/test.com/jv/admin/model/menu/megamenu.php on line 148
+2014-07-29 15:17:08 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:17:14 - PHP Notice:  Undefined variable: headermenu in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_form.tpl on line 51
+2014-07-29 15:17:14 - PHP Notice:  Undefined variable: headermenu1 in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_form.tpl on line 75
+2014-07-29 15:17:20 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:17:32 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:17:32 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:19 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:20 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:22 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:23 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:27 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:29 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:30 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:31 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:19:33 - PHP Notice:  Undefined variable: headermenus in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_list.tpl on line 45
+2014-07-29 15:25:02 - PHP Notice:  Undefined variable: headermenu in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_form.tpl on line 51
+2014-07-29 15:25:02 - PHP Notice:  Undefined variable: headermenu1 in /var/www/hipno/data/www/test.com/jv/admin/view/template/catalog/custommenu_form.tpl on line 75
