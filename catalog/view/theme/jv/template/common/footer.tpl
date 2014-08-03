@@ -20,22 +20,18 @@
                                 <ul>
                                     <?php foreach($header['sub_title'] as $subtitle){ ?>
                                         <li>
-                                            <?php if(isset($subtitle['href'])){;?>
-                                                <a href="<?php echo $subtitle['href']; ?>"><?php echo $subtitle['title']; ?></a>
-                                            <?php }else{ var_dump($subtitle['link'])?>
+                                            <?php if ($subtitle['link']):?>
                                                 <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
-                                            <?php } ?>
+                                            <?php endif;?>
                                             <?php if($subtitle['sub_title']){?>
                                                 <ul>
                                                     <?php foreach($subtitle['sub_title'] as $subtitle){ ?>
                                                         <li>
-                                                            <?php if(isset($subtitle['href'])){?>
-                                                                <a href="<?php echo $subtitle['href']; ?>"><?php echo $subtitle['title']; ?></a>
-                                                            <?php }else{?>
+                                                            <?php if(($subtitle['link'])):?>
                                                                 <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
-                                                            <?php } ?>
+                                                            <?php endif; ?>
                                                         </li>
-                                                    <?php }?>
+                                                    <?php } ?>
                                                 </ul>
                                             <?php }?>
                                         </li>
