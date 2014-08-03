@@ -40,7 +40,7 @@
                             </div>
 
                         <?php }?>
-                    <?php echo ($key !==$lastKey) ? '<li class="v-sep"></li>':null ?>
+                    <?php echo ($key !==$lastKey) ? '<li class="v-sep">':null ?>
                     <?php  ?>
                 <?php  }?>
             </ul>
