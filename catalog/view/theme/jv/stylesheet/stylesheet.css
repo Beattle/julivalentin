@@ -18,12 +18,12 @@ pre {
   font-size: 2rem;
 }
 /* target IE7 and IE6 */
-*:first-child + html pre {
+/**:first-child+html pre {
   padding-bottom: 2em;
   overflow-y: hidden;
   overflow: visible;
   overflow-x: auto;
-}
+}*/
 * html pre {
   padding-bottom: 2em;
   overflow: visible;
@@ -201,30 +201,30 @@ li {
   right: 0;
   height: 40px;
 }
-#container footer #menu ul > li {
+#container footer #menu > ul > li {
   display: inline-block;
   padding: 0 1%;
   position: relative;
 }
-#container footer #menu ul > li > div {
+#container footer #menu > ul > li > div {
   position: absolute;
   bottom: 30px;
   background: #361703 none no-repeat 0 0;
   min-width: 200px;
 }
-#container footer #menu ul > li > div > ul li {
+#container footer #menu > ul > li > div > ul li {
   border-top: 1px solid #8c542f;
   width: 100%;
 }
-#container footer #menu ul > li > div > ul li:first-child {
+#container footer #menu > ul > li > div > ul li:first-child {
   border: none;
 }
-#container footer #menu ul > li > div > ul li a {
+#container footer #menu > ul > li > div > ul li a {
   font-family: Verdana, sans-serif;
   font-size: 0.8rem;
   color: #ffffff;
 }
-#container footer #menu ul > li.v-sep {
+#container footer #menu > ul > li.v-sep {
   padding: 0;
   background: #361703 none no-repeat 0 0;
   height: 31px;
@@ -232,7 +232,7 @@ li {
   position: relative;
   top: 4px;
 }
-#container footer #menu ul > li#magic-line {
+#container footer #menu > ul > li#magic-line {
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -240,7 +240,7 @@ li {
   background: #361703;
   padding: 0;
 }
-#container footer #menu ul > li a {
+#container footer #menu > ul > li a {
   font-family: 'Alegreya', sans-serif;
   font-size: 1.46rem;
   font-weight: bold;
