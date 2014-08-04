@@ -111,9 +111,6 @@ li {
 #container header #cart .content {
   display: none;
 }
-#container #content.home {
-  height: 76.667%;
-}
 #container #content.home .table {
   height: 100%;
 }
@@ -200,11 +197,16 @@ li {
   left: 110px;
   right: 0;
   height: 40px;
+  display: inline;
+}
+#container footer #menu > ul {
+  display: inline;
 }
 #container footer #menu > ul > li {
-  display: inline-block;
   padding: 0 1%;
   position: relative;
+  display: inline-block;
+  max-width: 200px;
 }
 #container footer #menu > ul > li > div {
   position: absolute;
@@ -253,7 +255,7 @@ li {
   left: 0;
   height: 3px;
   background: #361703;
-  padding: 0;
+  display: block;
 }
 #container footer #menu > ul > li a {
   font-family: 'Alegreya', sans-serif;
@@ -285,23 +287,31 @@ li {
   padding-bottom: 3px;
 }
 #container #social-networks {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  height: 31px;
+  /*    position: absolute;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    height: 31px;
+    z-index: -1;*/
+  /*    a:before{
+      display: inline-block;
+      font-size: 0;
+      line-height: 0;
+      content: url(@sprites);
+    }*/
 }
 #container #social-networks p {
   margin: 0;
 }
 #container #social-networks a {
-  display: block;
-  overflow: hidden;
-  background: transparent none no-repeat 0 0;
-  border: none;
-  float: left;
-  margin: 0 7px;
+  /*      display: block;
+      overflow: hidden;
+      .bg(@url: none);
+      border: none;
+      float: left;
+      margin: 0 7px;
+      text-indent: 100%;*/
 }
 #container #social-networks #Facebook {
   width: 19px;
@@ -330,12 +340,6 @@ li {
 }
 #container #social-networks #Vkontakte:before {
   margin: -36px -69px 0;
-}
-#container #social-networks a:before {
-  display: inline-block;
-  font-size: 0;
-  line-height: 0;
-  content: url('../image/sprites.png');
 }
 #container #search {
   position: absolute;

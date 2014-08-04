@@ -6,10 +6,9 @@
             </a>
         </div>
     <?php } ?>
-    <?php // echo '<pre>' . print_r($headermenu, true) . '</pre>'; ?>
         <nav id="menu">
             <ul>
-                <?php $lastKey = array_search(end($headermenu), $headermenu);reset($headermenu); ?>
+                <?php $lastKey = array_search(end($headermenu), $headermenu); ?>
                 <?php foreach($headermenu as $key => $header){?>
                     <li class='level-1
                         <?php if(!empty($header['class'])){
@@ -38,10 +37,8 @@
                                     <?php }?>
                                 </ul>
                             </div>
-
                         <?php }?>
-                    <?php echo ($key !==$lastKey) ? '<li class="v-sep">':null ?>
-                    <?php  ?>
+                    <?php  echo ($key !==$lastKey) ? '<li class="v-sep">':null ?>
                 <?php  }?>
             </ul>
         </nav>
@@ -71,10 +68,7 @@
                                                             <?php } ?>
                                                         </li>
                                                     <?php }?>
-
                                                 </ul>
-
-
                                             <?php }?>
                                         </li>
                                     <?php }?>
@@ -87,14 +81,12 @@
 
             </ul>
         </div>
-    <div id="social-networks"><?php echo $footer_center; ?></div>
+    <div id="social-networks">
+    </div>
     <div id="search">
         <div class="button-search"></div>
         <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
     </div>
 </footer>
-
-</div>
-
 </div>
 </body></html>

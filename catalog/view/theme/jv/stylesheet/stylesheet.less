@@ -143,7 +143,7 @@ ul,li{
 
 
   #content.home{
-    height: 76.667%;
+ //   height: 76.667%;
 
     .table{
       height: 100%;
@@ -266,11 +266,17 @@ ul,li{
       left:110px;
       right: 0;
       height: 40px;
+      display: inline;
+
+      >ul{
+        display: inline;
+      }
 
    >  ul > li{
-        display: inline-block;
         padding: 0 1%;
         position: relative;
+        display: inline-block;
+        max-width: 200px;
 
         > div{
           position: absolute;
@@ -324,7 +330,7 @@ ul,li{
           left: 0;
           height: 3px;
           background: @brown;
-          padding: 0;
+          display: block;
         }
 
         a{
@@ -333,6 +339,8 @@ ul,li{
           font-weight: bold;
           color: #361703;
           text-decoration: none;
+          // float: left;
+          // padding: 0 1%;
         }
       }
     }
@@ -371,20 +379,22 @@ ul,li{
       margin: 0;
     }
 
-    position: absolute;
+/*    position: absolute;
     right: 0;
     top:0;
     bottom: 0;
     margin: auto;
     height: 31px;
+    z-index: -1;*/
 
     a{
-      display: block;
+/*      display: block;
       overflow: hidden;
       .bg(@url: none);
       border: none;
       float: left;
       margin: 0 7px;
+      text-indent: 100%;*/
     }
     @soc_mar_top:-36px;
     #Facebook{
@@ -416,12 +426,12 @@ ul,li{
         margin:@soc_mar_top -69px 0;
       }
     }
-    a:before{
+/*    a:before{
       display: inline-block;
       font-size: 0;
       line-height: 0;
       content: url(@sprites);
-    }
+    }*/
   }
 
   #search{

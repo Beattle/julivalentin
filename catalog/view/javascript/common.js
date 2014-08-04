@@ -38,7 +38,7 @@ $(document).ready(function() {
 	});
 	
 	/* Mega Menu */
-	$('#menu ul > li > a + div').each(function(index, element) {
+/*	$('#menu ul > li > a + div').each(function(index, element) {
 		// IE6 & IE7 Fixes
 		if ($.browser.msie && ($.browser.version == 7 || $.browser.version == 6)) {
 			var category = $(element).find('a');
@@ -56,10 +56,10 @@ $(document).ready(function() {
 		if (i > 0) {
 			$(this).css('margin-left', '-' + (i + 5) + 'px');
 		}
-	});
+	});*/
 
 	// IE6 & IE7 Fixes
-	if ($.browser.msie) {
+/*	if ($.browser.msie) {
 		if ($.browser.version <= 6) {
 			$('#column-left + #column-right + #content, #column-left + #content').css('margin-left', '195px');
 			
@@ -77,7 +77,7 @@ $(document).ready(function() {
 				$(this).removeClass('active');
 			});	
 		}
-	}
+	}*/
 	
 	$('.success img, .warning img, .attention img, .information img').live('click', function() {
 		$(this).parent().fadeOut('slow', function() {
@@ -86,41 +86,46 @@ $(document).ready(function() {
 	});
 
 
+
+
+});
+
 /////////////////////////////////Magic Line /////////////////////////////
 
+$(function(){
+    var $el, leftPos, newWidth, $magicLine;
+    $mainNav = $("#menu > ul");
 
-        var $el, leftPos, newWidth,
-            $mainNav = $("nav#menu > ul");
 
 
-        $mainNav.append("<li id='magic-line'></li>"); //Now You See Me
-        var $magicLine = $("#magic-line");
-        if($mainNav.find('>li.active').length){
-            $magicLine
-                .width($mainNav.find('.active').outerWidth())
-                .css("left", $(".active ").position().left)
-                .data("origLeft", $magicLine.position().left)
-                .data("origWidth", $magicLine.width());
-        } else{
-            $magicLine
-                .data("origWidth",0);
-        }
+    $mainNav.append("<li id='magic-line'></li>"); //Now You See Me
+    $magicLine = $("#magic-line");
 
-        $mainNav.find('>li.level-1').hover(function() {
-            $el = $(this);
-            leftPos = $el.position().left;
-            newWidth = $el.outerWidth();
-            $magicLine.stop().animate({
-                left: leftPos,
-                width: newWidth
-            });
-        }, function() {
-            $magicLine.stop().animate({
-                left: $magicLine.data("origLeft"),
-                width: $magicLine.data("origWidth")
-            });
+    if($mainNav.find('li.active').length){
+        $magicLine
+            .width($('nav li.level-1.active').width())
+            .css("left", $("li.active ").position().left)
+            .data("origLeft", $magicLine.position().left)
+            .data("origWidth", $magicLine.width());
+    } else{
+        $magicLine
+            .data("origWidth",0);
+    }
+
+    $('nav li.level-1 ,.v-sep').hover(function() {
+        $el = $(this);
+        leftPos = $el.position().left;
+        newWidth = $el.width();
+        $magicLine.stop().animate({
+            left: leftPos,
+            width: newWidth
         });
-
+    }, function() {
+        $magicLine.stop().animate({
+            left: $magicLine.data("origLeft"),
+            width: $magicLine.data("origWidth")
+        });
+    });
 });
 
 function getURLVar(key) {
