@@ -208,30 +208,25 @@ li {
   display: inline-block;
   max-width: 200px;
 }
+#container footer #menu > ul > li:hover > div {
+  display: block;
+}
 #container footer #menu > ul > li > div {
   position: absolute;
-  bottom: 60px;
-  background: #361703 none no-repeat 0 0;
   width: 100%;
   left: 0;
+  display: none;
+  padding-bottom: 60px;
+  bottom: 0;
 }
-#container footer #menu > ul > li > div:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #361703;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  border-style: inset;
+#container footer #menu > ul > li > div > ul {
+  background: #361703 none no-repeat 0 0;
 }
 #container footer #menu > ul > li > div > ul li {
   border-top: 1px solid #8c542f;
   padding: 4% 4%;
   text-align: right;
+  position: relative;
 }
 #container footer #menu > ul > li > div > ul li:first-child {
   border: none;
@@ -240,6 +235,38 @@ li {
   font-family: Verdana, sans-serif;
   font-size: 0.8rem;
   color: #ffffff;
+}
+#container footer #menu > ul > li > div > ul li > ul {
+  position: absolute;
+  left: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: none;
+  background: #361703 none no-repeat 0 0;
+  width: 100%;
+}
+#container footer #menu > ul > li > div > ul li > ul > li {
+  border-left: 1px solid #8c542f!important;
+}
+#container footer #menu > ul > li > div > ul li > ul > li > a {
+  display: block;
+}
+#container footer #menu > ul > li > div > ul li:hover > ul {
+  display: block;
+}
+#container footer #menu > ul > li > div:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #361703;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 #container footer #menu > ul > li.v-sep {
   padding: 0;
@@ -287,59 +314,55 @@ li {
   padding-bottom: 3px;
 }
 #container #social-networks {
-  /*    position: absolute;
-    right: 0;
-    top:0;
-    bottom: 0;
-    margin: auto;
-    height: 31px;
-    z-index: -1;*/
-  /*    a:before{
-      display: inline-block;
-      font-size: 0;
-      line-height: 0;
-      content: url(@sprites);
-    }*/
-}
-#container #social-networks p {
-  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 31px;
 }
 #container #social-networks a {
-  /*      display: block;
-      overflow: hidden;
-      .bg(@url: none);
-      border: none;
-      float: left;
-      margin: 0 7px;
-      text-indent: 100%;*/
+  display: block;
+  overflow: hidden;
+  background: transparent none no-repeat 0 0;
+  border: none;
+  float: left;
+  margin: 0 7px;
+  text-indent: 100%;
 }
 #container #social-networks #Facebook {
   width: 19px;
   height: 19px;
 }
 #container #social-networks #Facebook:before {
-  margin: -36px 0 0;
+  margin: -36px -38px 0;
 }
 #container #social-networks #Instagram {
   width: 20px;
   height: 20px;
 }
 #container #social-networks #Instagram:before {
-  margin: -36px -25px 0;
+  margin: -36px -64px 0;
 }
 #container #social-networks #Pinterest {
   width: 14px;
   height: 18px;
 }
 #container #social-networks #Pinterest:before {
-  margin: -36px -53px 0;
+  margin: -36px -81px 0;
 }
 #container #social-networks #Vkontakte {
   width: 27px;
   height: 19px;
 }
 #container #social-networks #Vkontakte:before {
-  margin: -36px -69px 0;
+  margin: -36px -123px 0;
+}
+#container #social-networks a:before {
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  content: url('../image/sprites.png');
 }
 #container #search {
   position: absolute;

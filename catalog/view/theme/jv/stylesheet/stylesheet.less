@@ -278,42 +278,73 @@ ul,li{
         display: inline-block;
         max-width: 200px;
 
+        &:hover > div{
+          display: block;
+        }
+
         > div{
           position: absolute;
-          bottom: 60px;
-          .bg(@color: @brown);
           width:100%;
           left:0;
+          display: none;
+          padding-bottom: 60px;
+          bottom: 0;
 
+          > ul{
+            .bg(@color: @brown);
+
+            li{
+              border-top:1px solid #8c542f;
+              padding: 4% 4%;
+              text-align: right;
+              position: relative;
+              &:first-child{
+                border:none;
+              }
+
+              a{
+                .Verdana;
+                font-size: 0.8rem;
+                color: #ffffff;
+              }
+
+              > ul{
+                position: absolute;
+                left: 100%;
+                right: 0;
+                top:0;
+                bottom: 0;
+                margin:auto;
+                display: none;
+                .bg(@color:@brown);
+                width: 100%;
+
+                > li{
+                  border-left:1px solid #8c542f!important;
+
+                  >a{
+                    display: block;
+                  }
+                }
+              }
+
+              &:hover > ul{
+                display: block;
+              }
+            }
+          }
           &:after{
             content: "";
             width: 0;
             height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-top: 20px solid @brown;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid @brown;
             position:absolute;
             left: 0;
             right: 0;
             margin:0 auto;
-            border-style: inset
-          }
-
-
-          >ul li{
-            border-top:1px solid #8c542f;
-           // width: 100%;
-            padding: 4% 4%;
-            text-align: right;
-            &:first-child{
-              border:none;
-            }
-
-            a{
-              .Verdana;
-              font-size: 0.8rem;
-              color: #ffffff;
-            }
+          //  border-style: inset
           }
         }
         &.v-sep{
@@ -375,33 +406,28 @@ ul,li{
 
   #social-networks{
 
-    p{
-      margin: 0;
-    }
-
-/*    position: absolute;
+    position: absolute;
     right: 0;
     top:0;
     bottom: 0;
     margin: auto;
     height: 31px;
-    z-index: -1;*/
 
     a{
-/*      display: block;
+      display: block;
       overflow: hidden;
       .bg(@url: none);
       border: none;
       float: left;
       margin: 0 7px;
-      text-indent: 100%;*/
+      text-indent: 100%;
     }
     @soc_mar_top:-36px;
     #Facebook{
       width: 19px;
       height: 19px;
       &:before{
-        margin:@soc_mar_top 0 0;
+        margin:@soc_mar_top -38px 0;
       }
     }
 
@@ -409,29 +435,29 @@ ul,li{
       width: 20px;
       height: 20px;
       &:before{
-        margin:@soc_mar_top -25px 0;
+        margin:@soc_mar_top -64px 0;
       }
     }
     #Pinterest{
       width: 14px;
       height: 18px;
       &:before{
-        margin:@soc_mar_top -53px 0;
+        margin:@soc_mar_top -81px 0;
       }
     }
     #Vkontakte{
       width: 27px;
       height: 19px;
       &:before{
-        margin:@soc_mar_top -69px 0;
+        margin:@soc_mar_top -123px 0;
       }
     }
-/*    a:before{
+    a:before{
       display: inline-block;
       font-size: 0;
       line-height: 0;
       content: url(@sprites);
-    }*/
+    }
   }
 
   #search{

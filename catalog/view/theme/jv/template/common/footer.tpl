@@ -82,6 +82,7 @@
             </ul>
         </div>
     <div id="social-networks">
+        <a href="#" id="Facebook">Facebook</a><a href="#" id="Instagram">Instagram</a><a href="#" id="Pinterest">Pinterest</a><a href="#" id="Vkontakte">Vkontakte</a>
     </div>
     <div id="search">
         <div class="button-search"></div>
