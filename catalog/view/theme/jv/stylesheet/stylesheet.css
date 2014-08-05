@@ -114,6 +114,25 @@ li {
 #container #content.home .table {
   height: 100%;
 }
+#container #content.home .left-column {
+  width: 69.5329%;
+  display: inline-block;
+  vertical-align: top;
+}
+#container #content.home .left-column .top-banners .banner {
+  width: 24.2222%;
+  margin-left: 0.77%;
+}
+#container #content.home .left-column .top-banners #banner2 {
+  margin-left: 10px;
+}
+#container #content.home .left-column .top-banners:after {
+  content: "";
+  clear: both;
+  visibility: hidden;
+  display: block;
+  height: 0;
+}
 #container #content.home .left-column .top-banners div {
   height: 100%;
 }
@@ -121,7 +140,8 @@ li {
   max-height: 113px;
 }
 #container #content.home .left-column .banner {
-  margin-left: 2.1277%;
+  display: block;
+  float: left;
 }
 #container #content.home .left-column .banner:first-child {
   margin: 0;
@@ -139,19 +159,22 @@ li {
   margin-top: 2.1277%;
   max-height: 554px;
 }
+#container #content.home .left-column .center .banner {
+  width: 49.25%;
+}
 #container #content.home .left-column .center > div:first-child {
   float: left;
+  margin-right: 10px;
 }
 #container #content.home .left-column .center > div:last-child {
-  display: block!important;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  margin-top: 1.3%;
 }
 #container #content.home .right-column {
   height: 100%;
   overflow: auto;
   max-height: 677px;
+  display: inline-block;
+  width: 30.1111%;
 }
 #container #content.home .right-column #article {
   margin: 2.1277% 0 0 6.3831%;
@@ -165,7 +188,6 @@ li {
   line-height: 80%;
 }
 #container #content.home .right-column .text {
-  max-width: 440px;
   font-family: Verdana, sans-serif;
   font-size: 0.7rem;
 }

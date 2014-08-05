@@ -37,12 +37,6 @@ DD_belatedPNG.fix('#logo img');
 </script>
 <![endif]-->
    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" />
-<!--[if lte IE 8]>
-  <link rel="stylesheet" href="<?php echo THEME_PATH.'stylesheet/grid-old-ie.css' ?>"/>
-<![endif]-->
-<!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="<?php echo THEME_PATH.'stylesheet/grid.css' ?>" />
-<!--<![endif]-->
     <link href='http://fonts.googleapis.com/css?family=Alegreya+SC:400,400italic,700%7CAlegreya:400,400italic,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/jv/stylesheet/stylesheet.css" />
 
