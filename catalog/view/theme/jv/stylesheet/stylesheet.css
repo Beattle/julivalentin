@@ -195,18 +195,24 @@ li {
   top: 0;
   bottom: 0;
   left: 110px;
-  right: 0;
   height: 40px;
-  display: inline;
+  width: 960px;
 }
 #container footer #menu > ul {
-  display: inline;
+  position: relative;
+  width: 1280px;
+}
+#container footer #menu > ul:after {
+  clear: both;
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
 }
 #container footer #menu > ul > li {
   padding: 0 1%;
   position: relative;
   display: inline-block;
-  max-width: 200px;
 }
 #container footer #menu > ul > li:hover > div {
   display: block;

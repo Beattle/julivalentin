@@ -10,36 +10,34 @@
             <ul>
                 <?php $lastKey = array_search(end($headermenu), $headermenu); ?>
                 <?php foreach($headermenu as $key => $header){?>
-                    <li class='level-1
-                        <?php if(!empty($header['class'])){
-                            echo $header['class'];
-                    } ?>'><a href="<?php echo $header['link'] ?>"><?php echo $header['title']; ?></a>
-                        <?php if($header['sub_title']){?>
-                            <div>
-                                <ul>
-                                    <?php foreach($header['sub_title'] as $subtitle){ ?>
-                                        <li>
-                                            <?php if ($subtitle['link']):?>
-                                                <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
-                                            <?php endif;?>
-                                            <?php if($subtitle['sub_title']){?>
-                                                <ul>
-                                                    <?php foreach($subtitle['sub_title'] as $subtitle){ ?>
-                                                        <li>
-                                                            <?php if(($subtitle['link'])):?>
-                                                                <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
-                                                            <?php endif; ?>
-                                                        </li>
-                                                    <?php } ?>
-                                                </ul>
-                                            <?php }?>
-                                        </li>
-                                    <?php }?>
-                                </ul>
-                            </div>
-                        <?php }?>
-                    <?php  echo ($key !==$lastKey) ? '<li class="v-sep">':null ?>
-                <?php  }?>
+                    <li class='level-1 <?php if(!empty($header['class'])){ echo $header['class'];} ?>'>
+                        <a href="<?php echo $header['link'] ?>"><?php echo $header['title']; ?></a>
+                            <?php if($header['sub_title']){?>
+                                <div>
+                                    <ul>
+                                        <?php foreach($header['sub_title'] as $subtitle){ ?>
+                                            <li>
+                                                <?php if ($subtitle['link']):?>
+                                                    <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
+                                                <?php endif;?>
+                                                <?php if($subtitle['sub_title']){?>
+                                                    <ul>
+                                                        <?php foreach($subtitle['sub_title'] as $subtitle){ ?>
+                                                            <li>
+                                                                <?php if(($subtitle['link'])):?>
+                                                                    <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
+                                                                <?php endif; ?>
+                                                            </li>
+                                                        <?php } ?>
+                                                    </ul>
+                                                <?php }?>
+                                            </li>
+                                        <?php }?>
+                                    </ul>
+                                </div>
+                            <?php }?>
+                        <?php  echo ($key !==$lastKey) ? '<li class="v-sep">':null ?>
+                <?php } ?>
             </ul>
         </nav>
         <div class="help-user-nav">

@@ -264,19 +264,25 @@ ul,li{
       top:0;
       bottom: 0;
       left:110px;
-      right: 0;
       height: 40px;
-      display: inline;
+      width: 960px;
 
       >ul{
-        display: inline;
+        position: relative;
+        width: 1280px;
+        &:after{
+          clear: both;
+          content: "";
+          display: block;
+          visibility: hidden;
+          height: 0;
+        }
       }
 
    >  ul > li{
         padding: 0 1%;
         position: relative;
         display: inline-block;
-        max-width: 200px;
 
         &:hover > div{
           display: block;
@@ -370,8 +376,6 @@ ul,li{
           font-weight: bold;
           color: #361703;
           text-decoration: none;
-          // float: left;
-          // padding: 0 1%;
         }
       }
     }

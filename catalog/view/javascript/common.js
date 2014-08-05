@@ -112,6 +112,7 @@ $(function(){
             .data("origWidth",0);
     }
 
+
     $('nav li.level-1 ,.v-sep').hover(function() {
         $el = $(this);
         leftPos = $el.position().left;
@@ -124,7 +125,7 @@ $(function(){
         $magicLine.stop().animate({
             left: $magicLine.data("origLeft"),
             width: $magicLine.data("origWidth")
-        });
+        })
     });
 });
 
