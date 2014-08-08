@@ -41,6 +41,18 @@
             <add><![CDATA[$_['text_footer_center'] = 'Подвал Центр';]]></add>
         </operation>
     </file>
+    <file path="catalog/language/russian/" name="russian.php">
+        <operation>
+            <search position="replace"><![CDATA[$_['text_separator']        = ' &raquo; ';]]></search>
+            <add><![CDATA[$_['text_separator']        = ' &gt; ';]]></add>
+        </operation>
+    </file>
+    <file path="catalog/language/english/" name="english.php">
+        <operation>
+            <search position="replace"><![CDATA[$_['text_separator']        = ' &raquo; ';]]></search>
+            <add><![CDATA[$_['text_separator']        = ' &gt; ';]]></add>
+        </operation>
+    </file>
 </modification>
 
 
