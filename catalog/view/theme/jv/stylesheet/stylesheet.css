@@ -29,19 +29,22 @@ pre {
   overflow: visible;
   overflow-x: auto;
 }
+html {
+  width: 100%;
+}
 body {
   font-size: 62.5%;
   background: #f2f2f2 none no-repeat 0 0;
   font-family: Verdana, Geneva, sans-serif;
   min-width: 1280px;
-  padding: 10px 10px 12px;
+  padding: 10px 10px 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  max-height: 950px;
   color: #000;
   max-width: 1920px;
   margin: 0 auto;
+  position: relative;
 }
 html,
 body,
@@ -63,8 +66,10 @@ li {
 }
 #container {
   position: relative;
+  margin-bottom: -110px;
 }
 #container header {
+  margin-bottom: 1%;
   height: 18px;
 }
 #container header > div {
@@ -111,107 +116,126 @@ li {
 #container header #cart .content {
   display: none;
 }
-#container #content.home .table {
-  height: 100%;
+#container #content.home {
+  position: relative;
 }
-#container #content.home .left-column {
+#container #content .left-column {
   width: 69.5329%;
-  display: inline-block;
-  vertical-align: top;
 }
-#container #content.home .left-column .top-banners .banner {
-  width: 24.2222%;
+#container #content .left-column .top-banners {
+  overflow: auto;
+}
+#container #content .left-column .top-banners .banner {
+  width: 24.3313%;
   margin-left: 0.77%;
 }
-#container #content.home .left-column .top-banners #banner2 {
+#container #content .left-column .top-banners #banner2 {
   margin-left: 10px;
 }
-#container #content.home .left-column .top-banners:after {
-  content: "";
-  clear: both;
-  visibility: hidden;
-  display: block;
-  height: 0;
+#container #content .left-column .top-banners:after {
+  /*        content:"";
+        clear:both;
+        visibility: hidden;
+        display: block;
+        height: 0;*/
 }
-#container #content.home .left-column .top-banners div {
+#container #content .left-column .top-banners div {
   height: 100%;
 }
-#container #content.home .left-column .top-banners .l-box {
-  max-height: 113px;
-}
-#container #content.home .left-column .banner {
+#container #content .left-column .banner {
   display: block;
   float: left;
 }
-#container #content.home .left-column .banner:first-child {
+#container #content .left-column .banner:first-child {
   margin: 0;
 }
-#container #content.home .left-column .banner .l-box {
+#container #content .left-column .banner .l-box {
   padding: 5px;
   -webkit-box-shadow: 0 0 4px #bbb6b3;
   -moz-box-shadow: 0 0 4px #bbb6b3;
   box-shadow: 0 0 4px #bbb6b3;
   background: #ffffff none no-repeat 0 0;
 }
-#container #content.home .left-column .center {
+#container #content .left-column .center {
   overflow: hidden;
   position: relative;
-  margin-top: 2.1277%;
-  max-height: 554px;
+  margin-top: 0.5%;
 }
-#container #content.home .left-column .center .banner {
-  width: 49.25%;
+#container #content .left-column .center #banner4 {
+  width: 49.5%;
 }
-#container #content.home .left-column .center > div:first-child {
-  float: left;
+#container #content .left-column .center #banner5,
+#container #content .left-column .center #banner6 {
+  width: 49.4%;
+}
+#container #content .left-column .center > div:first-child {
   margin-right: 10px;
+  float: left;
 }
-#container #content.home .left-column .center > div:last-child {
-  margin-top: 1.3%;
+#container #content .left-column .center #banner5 {
+  position: absolute;
+  top: 0;
+  left: 49.5%;
+  margin-left: 10px;
 }
-#container #content.home .right-column {
+#container #content .left-column .center #banner6 {
+  position: absolute;
+  bottom: 0;
+  left: 49.5%;
+  margin-left: 10px;
+}
+#container #content .right-column {
   height: 100%;
-  overflow: auto;
-  max-height: 677px;
-  display: inline-block;
-  width: 30.1111%;
+  width: 30.4671%;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
-#container #content.home .right-column #article {
-  margin: 2.1277% 0 0 6.3831%;
-  overflow: auto;
+#container #content .right-column #column-right {
+  margin-left: 10px;
+  height: 99%;
 }
-#container #content.home .right-column #article h1 {
+#container #content .right-column #article {
+  margin: 2.1277% 0 0 0;
+  overflow: auto;
+  height: inherit;
+}
+#container #content .right-column #article h1 {
   font-family: 'Alegreya SC', serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: #361703;
   line-height: 80%;
 }
-#container #content.home .right-column .text {
+#container #content .right-column .text {
   font-family: Verdana, sans-serif;
   font-size: 0.7rem;
+  height: inherit;
 }
-#container footer {
+footer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   background: #f2f2f2 none no-repeat 0 0;
   z-index: 50;
+  height: 110px;
 }
-#container footer #logo {
+footer #logo {
   margin-left: 12px;
+  margin-bottom: 5px;
+  width: 80px;
 }
-#container footer #logo a {
+footer #logo a {
   display: block;
   max-width: 80px;
 }
-#container footer #logo img {
+footer #logo img {
   max-width: 100%;
   height: auto!important;
   display: block;
 }
-#container footer #menu {
+footer #menu {
   position: absolute;
   margin: auto;
   top: 0;
@@ -220,51 +244,51 @@ li {
   height: 40px;
   width: 960px;
 }
-#container footer #menu > ul {
+footer #menu > ul {
   position: relative;
-  width: 1280px;
+  /*      &:after{
+        clear: both;
+        content: "";
+        display: block;
+        visibility: hidden;
+        height: 0;
+      }*/
 }
-#container footer #menu > ul:after {
-  clear: both;
-  content: "";
-  display: block;
-  visibility: hidden;
-  height: 0;
-}
-#container footer #menu > ul > li {
+footer #menu > ul > li {
   padding: 0 1%;
   position: relative;
   display: inline-block;
 }
-#container footer #menu > ul > li:hover > div {
+footer #menu > ul > li:hover > div {
   display: block;
 }
-#container footer #menu > ul > li > div {
+footer #menu > ul > li > div {
   position: absolute;
   width: 100%;
   left: 0;
   display: none;
-  padding-bottom: 60px;
+  padding-bottom: 42px;
   bottom: 0;
 }
-#container footer #menu > ul > li > div > ul {
+footer #menu > ul > li > div > ul {
   background: #361703 none no-repeat 0 0;
 }
-#container footer #menu > ul > li > div > ul li {
+footer #menu > ul > li > div > ul li {
   border-top: 1px solid #8c542f;
   padding: 4% 4%;
   text-align: right;
   position: relative;
 }
-#container footer #menu > ul > li > div > ul li:first-child {
+footer #menu > ul > li > div > ul li:first-child {
   border: none;
 }
-#container footer #menu > ul > li > div > ul li a {
+footer #menu > ul > li > div > ul li a {
   font-family: Verdana, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #ffffff;
+  font-weight: normal;
 }
-#container footer #menu > ul > li > div > ul li > ul {
+footer #menu > ul > li > div > ul li > ul {
   position: absolute;
   left: 100%;
   right: 0;
@@ -275,16 +299,16 @@ li {
   background: #361703 none no-repeat 0 0;
   width: 100%;
 }
-#container footer #menu > ul > li > div > ul li > ul > li {
+footer #menu > ul > li > div > ul li > ul > li {
   border-left: 1px solid #8c542f!important;
 }
-#container footer #menu > ul > li > div > ul li > ul > li > a {
+footer #menu > ul > li > div > ul li > ul > li > a {
   display: block;
 }
-#container footer #menu > ul > li > div > ul li:hover > ul {
+footer #menu > ul > li > div > ul li:hover > ul {
   display: block;
 }
-#container footer #menu > ul > li > div:after {
+footer #menu > ul > li > div:after {
   content: "";
   width: 0;
   height: 0;
@@ -292,11 +316,10 @@ li {
   border-right: 10px solid transparent;
   border-top: 10px solid #361703;
   position: absolute;
-  left: 0;
+  left: 25%;
   right: 0;
-  margin: 0 auto;
 }
-#container footer #menu > ul > li.v-sep {
+footer #menu > ul > li.v-sep {
   padding: 0;
   background: #361703 none no-repeat 0 0;
   height: 31px;
@@ -304,100 +327,65 @@ li {
   position: relative;
   top: 4px;
 }
-#container footer #menu > ul > li#magic-line {
+footer #menu > ul > li#magic-line {
   position: absolute;
   bottom: -2px;
   left: 0;
   height: 3px;
   background: #361703;
-  display: block;
+  display: inline-block;
 }
-#container footer #menu > ul > li a {
+footer #menu > ul > li a {
   font-family: 'Alegreya', sans-serif;
   font-size: 1.46rem;
   font-weight: bold;
   color: #361703;
   text-decoration: none;
 }
-#container .help-user-nav {
+footer .help-user-nav {
   position: absolute;
-  margin: auto;
-  bottom: 5%;
+  bottom: 10%;
   left: 110px;
   right: 0;
+  width: 960px;
 }
-#container .help-user-nav li {
+footer .help-user-nav li {
   display: inline-block;
   padding: 0 1%;
 }
-#container .help-user-nav li a {
+footer .help-user-nav li a {
   font-family: Verdana, sans-serif;
   font-size: 0.70rem;
   color: #361703;
   text-decoration: none;
 }
-#container .help-user-nav li a:hover {
+footer .help-user-nav li a:hover {
   color: #668796;
   border-bottom: 1px solid #668796;
   padding-bottom: 3px;
 }
-#container #social-networks {
+footer #social-networks {
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 0;
   bottom: 0;
   margin: auto;
   height: 31px;
 }
-#container #social-networks a {
+footer #social-networks a {
   display: block;
   overflow: hidden;
   background: transparent none no-repeat 0 0;
   border: none;
   float: left;
   margin: 0 7px;
-  text-indent: 100%;
 }
-#container #social-networks #Facebook {
-  width: 19px;
-  height: 19px;
-}
-#container #social-networks #Facebook:before {
-  margin: -36px -38px 0;
-}
-#container #social-networks #Instagram {
-  width: 20px;
-  height: 20px;
-}
-#container #social-networks #Instagram:before {
-  margin: -36px -64px 0;
-}
-#container #social-networks #Pinterest {
-  width: 14px;
-  height: 18px;
-}
-#container #social-networks #Pinterest:before {
-  margin: -36px -81px 0;
-}
-#container #social-networks #Vkontakte {
-  width: 27px;
-  height: 19px;
-}
-#container #social-networks #Vkontakte:before {
-  margin: -36px -123px 0;
-}
-#container #social-networks a:before {
-  display: inline-block;
-  font-size: 0;
-  line-height: 0;
-  content: url('../image/sprites.png');
-}
-#container #search {
+footer #search {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 10px;
+  bottom: 12%;
 }
-#container #search input[name=search] {
+footer #search input[name=search] {
   text-align: right;
   font-family: Verdana, sans-serif;
   font-size: 0.7rem;
@@ -406,7 +394,7 @@ li {
   text-transform: lowercase;
   padding: 3px 12px 3px 40px;
 }
-#container #search .button-search {
+footer #search .button-search {
   width: 14px;
   height: 13px;
   position: absolute;

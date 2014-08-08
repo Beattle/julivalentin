@@ -90,9 +90,10 @@ $(document).ready(function() {
 
 });
 
+
 /////////////////////////////////Magic Line /////////////////////////////
 
-$(function(){
+window.onload = function(){
     var $el, leftPos, newWidth, $magicLine;
     $mainNav = $("#menu > ul");
 
@@ -127,7 +128,8 @@ $(function(){
             width: $magicLine.data("origWidth")
         })
     });
-});
+}
+
 
 function getURLVar(key) {
 	var value = [];
