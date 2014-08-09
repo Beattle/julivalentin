@@ -1,10 +1,15 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
+    <div class="breadcrumb">
+        <?php $last = array_search(end($breadcrumbs), $breadcrumbs); ?>
+        <?php foreach ($breadcrumbs as $key => $breadcrumb) { ?>
+            <?php if($last !== $key): ?>
+            <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+            <?php else: ?>
+                <?php echo $breadcrumb['separator']; ?><span class="last-bread"><?php echo $breadcrumb['text']; ?></span>
+            <?php endif; ?>
+        <?php } ?>
+    </div>
+<div id="content" class="article"><?php echo $content_top; ?>
   <h1><?php echo $heading_title; ?></h1>
   <div class="article-info">
       <?php if(!$disable_author || !$disable_create_date || !$disable_cat_list || !$disable_com_count) { ?>

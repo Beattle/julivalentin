@@ -110,7 +110,8 @@ window.onload = function(){
             .data("origWidth", $magicLine.width());
     } else{
         $magicLine
-            .data("origWidth",0);
+            .data("origWidth",0)
+            .css('padding','0');
     }
 
 

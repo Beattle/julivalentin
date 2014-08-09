@@ -64,9 +64,9 @@ font-family: Arial,Helvetica,sans-serif;
 }
 
 
-div.article-info{
+/*div.article-info{
     margin-bottom: 30px;
-}
+}*/
 
 .article-info h2 a:link, .article-info h2 a:visited{
     margin-top: 30px;
@@ -79,7 +79,7 @@ div.article-info .read-more{
     text-align: left;
 }
 
-div.article-info .info, div.article-info .footer-info{
+/*div.article-info .info, div.article-info .footer-info{
     display: block;
     height: 26px;
     margin: 0 0 10px 0;
@@ -88,7 +88,7 @@ div.article-info .info, div.article-info .footer-info{
     border-right: none;
     font-size: 11px;
     color: #666666;
-}
+}*/
 
 div.article-info .info a:link, div.article-info .info a:visited,
 div.article-info .footer-info a:link, div.article-info footer-info a:visited{
@@ -159,9 +159,9 @@ div.article-info .description, div.article-info .description a:link, div.article
     line-height: 1.5;
 }
 
-div.article-info .intro {
+/*div.article-info .intro {
     margin: 0 0 10px 0;
-}
+}*/
 
 div.article-info .intro p:last-child {
     margin-bottom: 0px;

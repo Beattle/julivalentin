@@ -16,6 +16,19 @@
 }
 
 
+
+@font-face {
+  font-family: 'Conv_charteritcblack';
+  src: url('../fonts/charteritcblack.eot');
+  src: local('☺'), url('../fonts/charteritcblack.woff') format('woff'), url('../fonts/charteritcblack.ttf') format('truetype'), url('../fonts/charteritcblack.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.BeautyFont{
+  font-family: Alegreya, 'Conv_charteritcblack', Verdana,sans-serif;
+}
+
 @path-to-img: '../image/';
 @sprites:'../image/sprites.png';
 
@@ -77,6 +90,22 @@ h1,h2,h3,h4,h5,h6{
 ul,li{
   margin: 0;
   padding: 0;
+}
+
+.breadcrumb{
+  position: absolute;
+  top:0;
+  *{
+    .Verdana;
+    font-size: 0.7rem;
+    color: @brown;
+    &:last-child{
+      text-decoration: none;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
 }
 
 #container{
@@ -151,6 +180,48 @@ ul,li{
       position: relative;
     }
 
+    &.article,&.category{
+      width: 60%;
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 7.4395%;
+      bottom: 0;
+      margin-bottom:110px;
+
+      .article-info{
+        overflow: auto;
+      }
+
+      h1{
+        .BeautyFont;
+        font-size: 2rem;
+        color: @brown;
+        border-bottom:4px solid #000;
+        margin-bottom:2.5%;
+      }
+      p{
+        font-size: 0.8rem;
+        .Verdana;
+      }
+      h2{
+        font-size: 0.9rem;
+        color: #000;
+      }
+      img{
+        margin: 0 20px 20px 0;
+        max-width: 70%!important;
+        height: auto!important;
+        display: block;
+      }
+
+
+      div.article-info{
+        height: 83%;
+      }
+    }
+
     .left-column{
       width: 69.5329%;
 
@@ -162,6 +233,19 @@ ul,li{
         .banner{
           width: 24.3313%;
           margin-left:0.77%;
+
+
+
+          .title{
+            position: absolute;
+            right:10%;
+            bottom: 10%;
+            .BeautyFont;
+            color: #f2f2f2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #000;
+          }
 
         }
         #banner2{
@@ -199,6 +283,7 @@ ul,li{
           -moz-box-shadow: 0 0 4px #bbb6b3;
           box-shadow: 0 0 4px #bbb6b3;
           .bg(@color: #fff);
+          position: relative;
         }
 
         img{
@@ -258,7 +343,7 @@ ul,li{
         height: inherit;
 
         h1{
-          font-family: 'Alegreya SC', serif;
+          .BeautyFont;
           font-size: 1.5rem;
           font-weight: 600;
           color: @brown;
@@ -417,7 +502,7 @@ footer{
       }
 
       a{
-        font-family: 'Alegreya', sans-serif;
+        .BeautyFont;
         font-size: 1.46rem;
         font-weight: bold;
         color: #361703;
