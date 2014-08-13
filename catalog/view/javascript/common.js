@@ -86,7 +86,19 @@ $(document).ready(function() {
 	});
 
 
+    $(".right-column article#article, section.category-content").mCustomScrollbar({
+        theme:"dark-3",
+        mouseWheel:{
+            enable: true,
+            preventDefault: true,
+            normalizeDelta: true,
+            deltaFactor: 200
 
+        },
+        autoDraggerLength:false
+
+        // scrollbarPosition:"outside"
+    });
 
 });
 
@@ -129,7 +141,7 @@ window.onload = function(){
             width: $magicLine.data("origWidth")
         })
     });
-}
+};
 
 
 function getURLVar(key) {

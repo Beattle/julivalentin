@@ -68,12 +68,12 @@ font-family: Arial,Helvetica,sans-serif;
     margin-bottom: 30px;
 }*/
 
-.article-info h2 a:link, .article-info h2 a:visited{
+/*.article-info h2 a:link, .article-info h2 a:visited{
     margin-top: 30px;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-}
+}*/
 
 div.article-info .read-more{
     text-align: left;
@@ -171,9 +171,9 @@ div.article-info .description {
     margin-top: 15px;
 }
 
-div.article-info div.tags{
+/*div.article-info div.tags{
     margin-bottom: 10px;
-}
+}*/
 
 #captcha{
     margin-top: 5px;

@@ -1,14 +1,16 @@
+<?php // echo '<pre>' . print_r($articles, true) . '</pre>'; ?>
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
+    <div class="breadcrumb">
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+            <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+        <?php } ?>
+    </div>
+<div id="content" class="category"><?php echo $content_top; ?>
   <?php if($rss) { ?>
     <div class="ac-rss-feed-icon"><a href="<?php echo $rss_href; ?>"><img src="<?php echo (defined('HTTP_IMAGE')) ? HTTP_IMAGE.'data/rss_feed.png':HTTP_SERVER . 'image/data/rss_feed.png' ;?>" alt="rss_feed" ></a></div>
   <?php } ?>
   <h1><?php echo $heading_title; ?></h1>
+    <section class="category-content">
   <?php if ($thumb || $description) { ?>
   <div class="category-info">
     <?php if ($thumb) { ?>
@@ -19,9 +21,26 @@
     <?php } ?>
   </div>
   <?php } ?>
-  <?php foreach ($articles as $article) { ?>
-   <div class="article-info">
+  <?php $last = array_search(end($articles),$articles); ?>
+  <?php foreach ($articles as $key => $article) { ?>
+   <div  class="article-info<?php if($key == $last) echo ' last'; ?>">
+       <?php if($article['image']):?>
+           <div class="article-image">
+               <a href="<?php echo $article['href'] ?>" title="<?php echo $article['title'] ?>">
+                   <img src="<?php echo 'image/'.$article['image'] ?>"alt="<?php echo $article['title']; ?>"/>
+               </a>
+           </div>
+       <?php endif;?>
        <h2><a href="<?php echo $article['href']; ?>"><?php echo $article['title']; ?></a></h2>
+       <?php  if($article['tags']): ?>
+           <div class="tags">
+               <?php foreach($article['tags'] as $tag): ?>
+                   <div  class="tag">
+                       <img src="<?php echo $tag['pic']; ?>" title="<?php echo $tag['name']; ?>"/>
+                   </div>
+               <?php endforeach; ?>
+           </div>
+       <?php endif;?>
       <?php if(!$disable_author || !$disable_create_date || !$disable_cat_list || !$disable_com_count) { ?>
        <div class="info">
         <?php if(!$disable_author) { ?>
@@ -71,5 +90,6 @@
        <div><a class="button" href="<?php echo $archive_href; ?>"><span><?php echo $text_archive; ?></span></a></div>
       <?php }  ?>
    <?php }  ?>
+  </section>
 <?php echo $content_bottom; ?></div>
 <?php echo $footer; ?>

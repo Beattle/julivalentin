@@ -773,5 +773,33 @@
 	</file>
         
         <!-- THEME MODIFICATIONS END -->
+    <!-- THERE IS NO GOD DAMN IMAGES IN CATS -->
+    <!-- SO TAGS -->
+    <file name="catalog/controller/ac_cms/category.php">
+        <operation>
+            <search position="before"><![CDATA[$this->data['articles'][] = array(]]></search>
+            <add><![CDATA[$tags_array = array();
+            $tags = array();
+            $tags_array = $this->model_ac_cms_article->getArticleTags($article['b_id']);
+            if($tags_array){
+                foreach ($tags_array as &$tag){
+                        $name = $this->language->get($tag['tag']);
+                        $pic = 'image/data/ingredients/'.str_replace(' ', '_', $tag['tag']).'.png';
+                        $tags[] = array(
+                            'name' => $name,
+                            'pic' => $pic
+                        );
+                }
+            }
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="after"><![CDATA['title' => $article['title'],]]></search>
+            <add><![CDATA[          'image' => $article['image'],
+                                    'tags' => $tags,
+
+            ]]></add>
+        </operation>
+    </file>
 
 </modification>

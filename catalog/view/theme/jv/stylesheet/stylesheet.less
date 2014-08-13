@@ -190,12 +190,6 @@ ul,li{
       bottom: 0;
       margin-bottom:110px;
 
-      .article-info{
-        overflow: auto;
-      }
-
-
-
       h1{
         .BeautyFont;
         font-size: 2rem;
@@ -203,26 +197,117 @@ ul,li{
         border-bottom:4px solid #000;
         margin-bottom:2.5%;
       }
+
       p{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         .Verdana;
       }
+
       h2{
         font-size: 0.9rem;
         color: #000;
       }
+
       img{
         margin: 0 20px 20px 0;
         max-width: 70%!important;
         height: auto!important;
         display: block;
       }
-
-
-      div.article-info{
-        height: 83%;
-      }
     }
+
+      &.category{
+        .category-content{
+          overflow: auto;
+          height: 80%;
+        }
+
+        .category-info{
+          margin-bottom:2.5%;
+          border-bottom:1px dashed @brown;
+
+            p{
+            // margin:0;
+            }
+        }
+
+        .article-info{
+          margin-top: 2.5%;
+          border-bottom:1px dashed #000;
+
+          &:first-child{
+            margin-top:0;
+            border-bottom:none;
+          }
+
+          &.last{
+            border-bottom: none;
+          }
+
+          .article-image{
+            float: left;
+            width: 33%;
+            margin: 0 20px 20px 0;
+
+            img{
+              max-width:100%!important;
+              margin: 0;
+              border:1px solid @brown;
+            }
+          }
+
+          .tags{
+           height: 42px;
+           margin: 1.25% 0 1.25% 0;
+
+          &:after{
+            content: "";
+            clear: both;
+            visibility: hidden;
+            height: 0;
+            display: block;
+          }
+            .tag{
+              float: left;
+
+              img{
+                margin: 0;
+              }
+            }
+          }
+
+          h2{
+            a{
+              color: #000;
+              .BeautyFont;
+              font-size: 2rem;
+            &:hover{
+              text-decoration: none;
+            }
+            }
+          }
+
+          .intro{
+            p{
+              margin:0;
+              line-height: 1.1;
+            }
+          }
+
+        }
+      }
+
+      .pagination{
+        display: none;
+      }
+
+      &.article{
+        .article-info{
+          overflow: auto;
+          height: 83%;
+        }
+    }
+
 
     .left-column{
       width: 69.5329%;

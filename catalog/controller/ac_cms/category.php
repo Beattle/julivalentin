@@ -372,7 +372,7 @@ class ControllerACcmsCategory extends Controller {
                         'c_count' => count($cats)
                     );
                 }
-            
+
                 //$url = '';
                 $data = array('category' => $bc_id, 'access_level' => $this->checkAccess());
                 $data = array_merge($data, $data_archive);

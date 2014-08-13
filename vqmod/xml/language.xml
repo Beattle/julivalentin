@@ -46,11 +46,39 @@
             <search position="replace"><![CDATA[$_['text_separator']        = ' &raquo; ';]]></search>
             <add><![CDATA[$_['text_separator']        = ' &gt; ';]]></add>
         </operation>
+        <operation>
+            <search position="before"><![CDATA[?>]]></search>
+            <add><![CDATA[          /////////////////////////-----ingredients--------////////////////
+$_['plain chocolate']      = 'тёмный шоколад';
+$_['milk chocolate']       = 'молочный шоколад';
+$_['white chocolate']      = 'белый шоколад';
+$_['alcohol']              = 'алкоголь';
+$_['nuts']                 = 'орехи';
+$_['fruits']               = 'фрукты';
+$_['milk products']        = 'молочные продукты';
+$_['soya']                 = 'сойа';
+$_['gluten']               = 'клейковина';
+                ]]></add>
+        </operation>
     </file>
     <file path="catalog/language/english/" name="english.php">
         <operation>
             <search position="replace"><![CDATA[$_['text_separator']        = ' &raquo; ';]]></search>
             <add><![CDATA[$_['text_separator']        = ' &gt; ';]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[?>]]></search>
+            <add><![CDATA[          /////////////////////////-----ingredients--------////////////////
+$_['plain chocolate']      = 'plain chocolate';
+$_['milk chocolate']       = 'milk chocolate';
+$_['white chocolate']      = 'white chocolate';
+$_['alcohol']              = 'alcohol';
+$_['nuts']                 = 'nuts';
+$_['fruits']               = 'fruits';
+$_['milk products']        = 'milk products';
+$_['soya']                 = 'soya';
+$_['gluten']               = 'gluten';
+                ]]></add>
         </operation>
     </file>
 </modification>

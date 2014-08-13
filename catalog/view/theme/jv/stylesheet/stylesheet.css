@@ -155,10 +155,6 @@ li {
   bottom: 0;
   margin-bottom: 110px;
 }
-#container #content.article .article-info,
-#container #content.category .article-info {
-  overflow: auto;
-}
 #container #content.article h1,
 #container #content.category h1 {
   font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
@@ -169,7 +165,7 @@ li {
 }
 #container #content.article p,
 #container #content.category p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-family: Verdana, sans-serif;
 }
 #container #content.article h2,
@@ -184,8 +180,69 @@ li {
   height: auto!important;
   display: block;
 }
-#container #content.article div.article-info,
-#container #content.category div.article-info {
+#container #content.category .category-content {
+  overflow: auto;
+  height: 80%;
+}
+#container #content.category .category-info {
+  margin-bottom: 2.5%;
+  border-bottom: 1px dashed #361703;
+}
+#container #content.category .article-info {
+  margin-top: 2.5%;
+  border-bottom: 1px dashed #000;
+}
+#container #content.category .article-info:first-child {
+  margin-top: 0;
+  border-bottom: none;
+}
+#container #content.category .article-info.last {
+  border-bottom: none;
+}
+#container #content.category .article-info .article-image {
+  float: left;
+  width: 33%;
+  margin: 0 20px 20px 0;
+}
+#container #content.category .article-info .article-image img {
+  max-width: 100%!important;
+  margin: 0;
+  border: 1px solid #361703;
+}
+#container #content.category .article-info .tags {
+  height: 42px;
+  margin: 1.25% 0 1.25% 0;
+}
+#container #content.category .article-info .tags:after {
+  content: "";
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  display: block;
+}
+#container #content.category .article-info .tags .tag {
+  float: left;
+}
+#container #content.category .article-info .tags .tag img {
+  margin: 0;
+}
+#container #content.category .article-info h2 a {
+  color: #000;
+  font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
+  font-size: 2rem;
+}
+#container #content.category .article-info h2 a:hover {
+  text-decoration: none;
+}
+#container #content.category .article-info .intro p {
+  margin: 0;
+  line-height: 1.1;
+}
+#container #content .pagination {
+  display: none;
+}
+#container #content.article .article-info {
+  overflow: auto;
   height: 83%;
 }
 #container #content .left-column {

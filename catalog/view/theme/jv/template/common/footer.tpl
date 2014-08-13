@@ -81,10 +81,10 @@
         </ul>
     </div>
     <div id="social-networks">
-        <a href="#" id="Facebook" title="Join us on Facebook"><img src="catalog/view/theme/jv/image/facebook.gif"/></a>
-        <a href="#" id="Instagram" title="See our pics on Instagram"><img src="catalog/view/theme/jv/image/instagram.gif"/></a>
-        <a href="#" id="Pinterest" title="Pinterest"><img src="catalog/view/theme/jv/image/pinterest.gif"></a>
-        <a href="#" id="Vkontakte" title="Join us on Vkontakte"><img src="catalog/view/theme/jv/image/vk.gif"></a>
+        <a href="#" id="Facebook" title="Join us on Facebook"><img src="catalog/view/theme/jv/image/facebook.png"/></a>
+        <a href="#" id="Instagram" title="See our pics on Instagram"><img src="catalog/view/theme/jv/image/instagram.png"/></a>
+        <a href="#" id="Pinterest" title="Pinterest"><img src="catalog/view/theme/jv/image/pinterest.png"></a>
+        <a href="#" id="Vkontakte" title="Join us on Vkontakte"><img src="catalog/view/theme/jv/image/vk.png"></a>
     </div>
     <div id="search">
         <div class="button-search"></div>
