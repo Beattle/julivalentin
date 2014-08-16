@@ -11,6 +11,9 @@
 .BeautyFont {
   font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
 }
+ul {
+  list-style: outside none;
+}
 pre code {
   line-height: 1.6em;
   font-size: 11px;
@@ -52,7 +55,6 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   color: #000;
-  max-width: 1920px;
   margin: 0 auto;
   position: relative;
 }
@@ -81,13 +83,14 @@ li {
 .breadcrumb * {
   font-family: Verdana, sans-serif;
   font-size: 0.7rem;
-  color: #361703;
-}
-.breadcrumb *:last-child {
-  text-decoration: none;
+  color: #000;
 }
 .breadcrumb *:hover {
   text-decoration: none;
+}
+.breadcrumb .last-bread {
+  text-decoration: none;
+  color: #361703;
 }
 #container {
   position: relative;
@@ -116,7 +119,7 @@ li {
   line-height: 20px;
   font-size: 0.5rem;
   font-weight: bold;
-  color: #361703;
+  color: #000;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
@@ -151,17 +154,17 @@ li {
   position: absolute;
   left: 0;
   right: 0;
-  top: 7.4395%;
+  top: 5%;
   bottom: 0;
   margin-bottom: 110px;
 }
 #container #content.article h1,
 #container #content.category h1 {
   font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #361703;
-  border-bottom: 4px solid #000;
-  margin-bottom: 2.5%;
+  border-bottom: 2px solid #000;
+  margin-bottom: 1.6%;
 }
 #container #content.article p,
 #container #content.category p {
@@ -180,16 +183,38 @@ li {
   height: auto!important;
   display: block;
 }
+#container #content.article .tags,
+#container #content.category .tags {
+  height: 42px;
+  margin: 1.25% 0 1.25% 0;
+}
+#container #content.article .tags:after,
+#container #content.category .tags:after {
+  content: "";
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  display: block;
+}
+#container #content.article .tags .tag,
+#container #content.category .tags .tag {
+  float: left;
+}
+#container #content.article .tags .tag img,
+#container #content.category .tags .tag img {
+  margin: 0;
+  max-width: 46%!important;
+}
 #container #content.category .category-content {
   overflow: auto;
   height: 80%;
 }
 #container #content.category .category-info {
-  margin-bottom: 2.5%;
+  margin: 0 1.5% 2.5%;
   border-bottom: 1px dashed #361703;
 }
 #container #content.category .article-info {
-  margin-top: 2.5%;
+  margin: 2.5% 1.5% 0;
   border-bottom: 1px dashed #000;
 }
 #container #content.category .article-info:first-child {
@@ -201,35 +226,18 @@ li {
 }
 #container #content.category .article-info .article-image {
   float: left;
-  width: 33%;
+  width: 26.4%;
   margin: 0 20px 20px 0;
 }
 #container #content.category .article-info .article-image img {
   max-width: 100%!important;
   margin: 0;
-  border: 1px solid #361703;
-}
-#container #content.category .article-info .tags {
-  height: 42px;
-  margin: 1.25% 0 1.25% 0;
-}
-#container #content.category .article-info .tags:after {
-  content: "";
-  clear: both;
-  visibility: hidden;
-  height: 0;
-  display: block;
-}
-#container #content.category .article-info .tags .tag {
-  float: left;
-}
-#container #content.category .article-info .tags .tag img {
-  margin: 0;
+  border: 1px solid #000;
 }
 #container #content.category .article-info h2 a {
   color: #000;
   font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
-  font-size: 2rem;
+  font-size: 1.275rem;
 }
 #container #content.category .article-info h2 a:hover {
   text-decoration: none;
@@ -245,11 +253,64 @@ li {
   overflow: auto;
   height: 83%;
 }
+#container #content.article .article-info .main-image {
+  float: left;
+  max-width: 543px;
+  margin: 0 20px 20px 0;
+}
+#container #content.article .article-info .main-image img {
+  border: 1px solid #000;
+  max-width: 100%!important;
+  margin: 0;
+}
+#container #content.category-products {
+  width: 69.5329%;
+  position: relative;
+  top: 5%;
+  margin-bottom: 110px;
+}
+#container #content.category-products h1 {
+  font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
+  font-size: 1.5rem;
+  color: #361703;
+  border-bottom: 2px solid #000;
+  margin-bottom: 1.6%;
+}
+#container #content.category-products .category-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+#container #content.category-products .category-list ul li {
+  display: block;
+  float: right;
+  margin: 0 1%;
+  height: 2rem;
+}
+#container #content.category-products .category-list ul li a {
+  font-size: 0.85rem;
+  color: #000;
+  vertical-align: -15px;
+  text-decoration: none;
+}
+#container #content.category-products .product-list .product {
+  display: inline-block;
+  width: 19.5395%;
+  border: 1px solid #cdb5a4;
+}
+#container #content.category-products .product-list .product .image img {
+  max-width: 100%;
+  display: block;
+  height: auto!important;
+}
+#container #content.category-products .product-list .product .name a {
+  font-size: 0.8rem;
+  color: #000;
+}
 #container #content .left-column {
   width: 69.5329%;
-}
-#container #content .left-column .top-banners {
-  overflow: auto;
+  height: 100%;
 }
 #container #content .left-column .top-banners .banner {
   width: 24.3313%;
@@ -262,6 +323,7 @@ li {
   font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
   color: #f2f2f2;
   font-size: 1.5rem;
+  font-size: 3vmin;
   font-weight: bold;
   text-shadow: 1px 1px 1px #000;
 }
@@ -269,11 +331,9 @@ li {
   margin-left: 10px;
 }
 #container #content .left-column .top-banners:after {
-  /*        content:"";
-        clear:both;
-        visibility: hidden;
-        display: block;
-        height: 0;*/
+  content: "";
+  clear: both;
+  display: table;
 }
 #container #content .left-column .top-banners div {
   height: 100%;
@@ -297,6 +357,18 @@ li {
   overflow: hidden;
   position: relative;
   margin-top: 0.5%;
+}
+#container #content .left-column .center .banner .l-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+#container #content .left-column .center .banner a {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 #container #content .left-column .center #banner4 {
   width: 49.5%;
