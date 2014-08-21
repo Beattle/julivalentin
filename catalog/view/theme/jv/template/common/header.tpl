@@ -24,6 +24,7 @@
 <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+    <script type="text/javascript" src="catalog/view/javascript/jquery/image-scale/image-scale.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/jquery/customScrollbar/jquery.mCustomScrollbar.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/jquery/customScrollbar/jquery.mousewheel-3.0.6.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
@@ -41,7 +42,8 @@ DD_belatedPNG.fix('#logo img');
 </script>
 <![endif]-->
    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" />
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/jv/stylesheet/stylesheet.css" />
+    <link rel="stylesheet/less" type="text/css" href="catalog/view/theme/jv/stylesheet/stylesheet.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.4/less.min.js"></script>
 
 
 <?php if ($stores) { ?>

@@ -10,18 +10,10 @@
           <td class="image"><?php if ($product['thumb']) { ?>
             <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
             <?php } ?></td>
-          <td class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-            <div>
-              <?php foreach ($product['option'] as $option) { ?>
-              - <small><?php echo $option['name']; ?> <?php echo $option['value']; ?></small><br />
-              <?php } ?>
-              <?php if ($product['recurring']): ?>
-              - <small><?php echo $text_payment_profile ?> <?php echo $product['profile']; ?></small><br />
-              <?php endif; ?>
-            </div></td>
-          <td class="quantity">x&nbsp;<?php echo $product['quantity']; ?></td>
-          <td class="total"><?php echo $product['total']; ?></td>
-          <td class="remove"><img src="catalog/view/theme/default/image/remove-small.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" onclick="(getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') ? location = 'index.php?route=checkout/cart&remove=<?php echo $product['key']; ?>' : $('#cart').load('index.php?route=module/cart&remove=<?php echo $product['key']; ?>' + ' #cart > *');" /></td>
+          <td class="name qty total"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+          <div class="quantity">x&nbsp;<?php echo $product['quantity']; ?></div>
+          <div class="total"><?php echo $product['total']; ?></div>
+          </td>
         </tr>
         <?php } ?>
         <?php foreach ($vouchers as $voucher) { ?>

@@ -801,5 +801,26 @@
             ]]></add>
         </operation>
     </file>
+    <file name="catalog/controller/ac_cms/article.php">
+        <operation>
+            <search position="after"><![CDATA[ $this->data['description'] = html_entity_decode($article_info['description'], ENT_QUOTES, 'UTF-8');]]></search>
+            <add><![CDATA[
+                         if ($article_info['image']) {
+                        $image_ac = $this->model_tool_image->resize($article_info['image'],775,390);
+                        } else {
+                        $image_ac = false;
+                        }
+            $this->data['article_info']['image_ac'] = $image_ac;
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA['href' => $this->url->link('ac_cms/search', 'filter_tag=' . $result['tag'])]]></search>
+            <add><![CDATA['href' => $this->url->link('ac_cms/search', 'filter_tag=' . $result['tag']),
+                    'name' => $this->language->get($result['tag']),
+                    'pic' => 'image/data/ingredients/'.str_replace(' ','_',$result['tag']).'.png'
+
+                    ]]></add>
+        </operation>
+    </file>
 
 </modification>

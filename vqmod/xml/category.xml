@@ -1,0 +1,57 @@
+<modification>
+	<id><![CDATA[modify product category controller]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file path="catalog/controller/product/" name="category.php">
+		<operation>
+			<search position="replace"><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+				]]></search>
+			<add><![CDATA[
+			    $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+			    $currency = $this->currency->getSymbolRight();
+			    if($currency == 'Р'):
+			    $currency_rub = '<span style="text-decoration:line-through;" class="currency">Р</span>';
+			    $price = str_replace($currency,"<span class='currency'>{$currency_rub}</span>",$price);
+			    else:
+			    $price = str_replace($currency,"<span class='currency'>{$currency}</span>",$price);
+			    endif;
+			]]></add>
+		</operation>
+        <operation>
+            <search position="before"><![CDATA['price'       => $price,]]></search>
+            <add><![CDATA['weight'      => (int)$result['weight'] .' '.$this->weight->getUnit($result['weight_class_id']),]]></add>
+        </operation>
+	</file>
+    <file name="admin/view/template/catalog/category_form.tpl">
+        <operation>
+            <search position="after"><![CDATA[CKEDITOR.replace('description<?php echo $language['language_id']; ?>', {]]></search>
+            <add><![CDATA[toolbar : 'ACCMS',]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[CKEDITOR.replace('description<?php echo $language['language_id']; ?>', {]]></search>
+            <add><![CDATA[        CKEDITOR.config.toolbar_ACCMS =
+        [
+        { name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print' ] },
+        { name: 'tools', items : [ 'Maximize', 'ShowBlocks' ] },
+        { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
+        '/',
+
+        { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','- ','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
+        { name: 'links', items : [ 'Link','Unlink','Anchor' ] },
+        { name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+
+        '/',
+
+        { name: 'colors', items : [ 'TextColor','BGColor' ] },
+        { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+        { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+        { name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar' ] }
+        ];]]></add>
+        </operation>
+    </file>
+</modification>
+
+
+
+

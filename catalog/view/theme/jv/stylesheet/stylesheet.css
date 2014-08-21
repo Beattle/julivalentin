@@ -141,8 +141,33 @@ li {
   top: 0;
   bottom: 0;
 }
+#container header #cart:hover .content {
+  display: block;
+}
 #container header #cart .content {
   display: none;
+  position: absolute;
+  right: 0;
+  border: 2px solid #361703;
+  background: #ffffff none no-repeat 0 0;
+  z-index: 50;
+  max-width: 210px;
+  padding-right: 10px;
+}
+#container header #cart .content .mini-cart-info .image {
+  text-align: center;
+  vertical-align: bottom;
+}
+#container header #cart .content .mini-cart-info .name a {
+  font-size: 0.8rem;
+  color: #708e9c;
+}
+#container header #cart .content .mini-cart-info .name a:hover {
+  text-decoration: none;
+}
+#container header #cart .content .mini-cart-info .name .quantity,
+#container header #cart .content .mini-cart-info .name .total {
+  display: inline-block;
 }
 #container #content.home {
   position: relative;
@@ -151,11 +176,6 @@ li {
 #container #content.category {
   width: 60%;
   margin: 0 auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 5%;
-  bottom: 0;
   margin-bottom: 110px;
 }
 #container #content.article h1,
@@ -202,8 +222,8 @@ li {
 }
 #container #content.article .tags .tag img,
 #container #content.category .tags .tag img {
-  margin: 0;
-  max-width: 46%!important;
+  margin: 0 3px;
+  max-width: 100%!important;
 }
 #container #content.category .category-content {
   overflow: auto;
@@ -264,10 +284,12 @@ li {
   margin: 0;
 }
 #container #content.category-products {
-  width: 69.5329%;
   position: relative;
-  top: 5%;
   margin-bottom: 110px;
+  padding-left: 20px;
+}
+#container #content.category-products .right-column {
+  width: 29.467%;
 }
 #container #content.category-products h1 {
   font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
@@ -294,23 +316,77 @@ li {
   vertical-align: -15px;
   text-decoration: none;
 }
+#container #content.category-products .product-list {
+  height: 80%;
+  overflow: auto;
+  vertical-align: top;
+}
 #container #content.category-products .product-list .product {
   display: inline-block;
   width: 19.5395%;
-  border: 1px solid #cdb5a4;
+  margin-bottom: 2%;
+}
+#container #content.category-products .product-list .product:hover .image {
+  border: 1px solid #361703;
+  -moz-box-shadow: 0px 0px 4px #000;
+  box-shadow: 0px 0px 4px #000;
+}
+#container #content.category-products .product-list .product:hover .image img {
+  border: none;
+}
+#container #content.category-products .product-list .product .image {
+  position: relative;
 }
 #container #content.category-products .product-list .product .image img {
   max-width: 100%;
   display: block;
   height: auto!important;
+  border: 1px solid #cdb5a4;
+}
+#container #content.category-products .product-list .product .image .buy {
+  position: absolute;
+  top: 4.5%;
+  left: 3%;
+  width: 20px;
+  height: 18px;
+  border: none;
+  background: #ffffff no-repeat -77px 0;
+  background-image: url('../image/sprites.png');
+}
+#container #content.category-products .product-list .product .image .buy:hover {
+  background: #ffffff no-repeat -77px -19px;
+  background-image: url('../image/sprites.png');
+}
+#container #content.category-products .product-list .product .name {
+  margin-top: 5.25%;
 }
 #container #content.category-products .product-list .product .name a {
   font-size: 0.8rem;
   color: #000;
+  padding: 0 21px;
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  text-shadow: -1px -1px 0px #aaaaaa;
+}
+#container #content.category-products .product-list .product .price {
+  padding: 0 21px;
+  margin-top: 3%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-shadow: -1px -1px 0px #aaaaaa;
+}
+#container #content.category-products .product-list .product .price .currency {
+  text-decoration: line-through;
+  margin-left: 1px;
+}
+#container #content.category-products .category-info h2 {
+  color: #361703;
 }
 #container #content .left-column {
   width: 69.5329%;
   height: 100%;
+  position: relative;
 }
 #container #content .left-column .top-banners .banner {
   width: 24.3313%;
@@ -322,10 +398,9 @@ li {
   bottom: 10%;
   font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
   color: #f2f2f2;
-  font-size: 1.5rem;
-  font-size: 3vmin;
+  font-size: 0.9rem;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: -1px -1px 0px #000000, 0px 1px 1px #000000;
 }
 #container #content .left-column .top-banners #banner2 {
   margin-left: 10px;
@@ -497,11 +572,13 @@ footer #menu > ul > li > div > ul li a {
   color: #ffffff;
   font-weight: normal;
 }
+footer #menu > ul > li > div > ul li a:hover {
+  color: #668796;
+}
 footer #menu > ul > li > div > ul li > ul {
   position: absolute;
   left: 100%;
   right: 0;
-  top: 0;
   bottom: 0;
   margin: auto;
   display: none;
@@ -513,6 +590,9 @@ footer #menu > ul > li > div > ul li > ul > li {
 }
 footer #menu > ul > li > div > ul li > ul > li > a {
   display: block;
+}
+footer #menu > ul > li > div > ul li > ul > li > a:hover {
+  color: #668796;
 }
 footer #menu > ul > li > div > ul li:hover > ul {
   display: block;

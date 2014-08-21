@@ -1,8 +1,13 @@
 <?php // echo '<pre>' . print_r($articles, true) . '</pre>'; ?>
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
     <div class="breadcrumb">
-        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-            <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+        <?php $last = array_search(end($breadcrumbs), $breadcrumbs); ?>
+        <?php foreach ($breadcrumbs as $key => $breadcrumb) { ?>
+            <?php if($last !== $key): ?>
+                <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+            <?php else: ?>
+                <?php echo $breadcrumb['separator']; ?><span class="last-bread"><?php echo $breadcrumb['text']; ?></span>
+            <?php endif; ?>
         <?php } ?>
     </div>
 <div id="content" class="category"><?php echo $content_top; ?>
@@ -72,11 +77,11 @@
       <?php if((!$disable_mod_date) && ($article['date_modified'])) {?>
       <div class="last-mod"><?php echo $text_modified.$article['date_modified']; ?></div>
       <?php } ?>
-      <?php if($article['description']) { ?>
+<!--      <?php /*if($article['description']) { */?>
       <div class="read-more">
-          <a class="button" href="<?php echo $article['href']; ?>"><span><?php echo $text_readmore; ?></span></a>
+          <a class="button" href="<?php /*echo $article['href']; */?>"><span><?php /*echo $text_readmore; */?></span></a>
       </div>
-      <?php } ?>
+      --><?php /*} */?>
    </div>
        <?php } ?>
    <?php if (!$articles) { ?>

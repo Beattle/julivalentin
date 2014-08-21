@@ -1,4 +1,5 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
+<?php // echo '<pre>' . print_r($article_info, true) . '</pre>'; ?>
     <div class="breadcrumb">
         <?php $last = array_search(end($breadcrumbs), $breadcrumbs); ?>
         <?php foreach ($breadcrumbs as $key => $breadcrumb) { ?>
@@ -39,6 +40,28 @@
       <?php } ?>
       </div>
      <?php } ?>
+      <?php if($article_info['image_ac']): ?>
+          <div class="main-image">
+              <img src="<?php echo $article_info['image_ac'] ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+          </div>
+      <?php endif; ?>
+      <?php if($tags) { ?>
+          <div class="tags">
+              <?php foreach($tags as $tag): ?>
+                  <div  class="tag">
+                      <img src="<?php echo $tag['pic']; ?>" title="<?php echo $tag['name']; ?>"/>
+                  </div>
+              <?php endforeach; ?>
+<!--              <span><?php /*echo $text_tags; */?>&nbsp;</span>
+              <?php /*$t_i=1; foreach ($tags as $tag) { */?>
+                  <?php /*if($c_tags == $t_i || $c_tags == 0) { */?>
+                      <a href="<?php /*echo $tag['href']; */?>"><?php /*echo $tag['tag']; */?></a>
+                  <?php /*}else{ */?>
+                      <a href="<?php /*echo $tag['href']; */?>"><?php /*echo $tag['tag']; */?></a>,&nbsp;
+                  <?php /*} */?>
+                  --><?php /*$t_i++; } */?>
+          </div>
+      <?php } ?>
       <div class="intro"><?php echo $intro; ?></div>
       <?php if($description) { ?>
       <div class="description"><?php echo $description; ?></div>
@@ -68,18 +91,7 @@
         <div class="clr"></div>
       </div>
      <?php } ?>
-      <?php if($tags) { ?>
-      <div class="tags">
-        <span><?php echo $text_tags; ?>&nbsp;</span>
-        <?php $t_i=1; foreach ($tags as $tag) { ?>
-        <?php if($c_tags == $t_i || $c_tags == 0) { ?>
-         <a href="<?php echo $tag['href']; ?>"><?php echo $tag['tag']; ?></a>
-        <?php }else{ ?>
-         <a href="<?php echo $tag['href']; ?>"><?php echo $tag['tag']; ?></a>,&nbsp;
-        <?php } ?>
-        <?php $t_i++; } ?>
-      </div>
-      <?php } ?>
+
       <?php if($rel_articles) { ?>
       <div class="article-related" >
          <h3><?php echo $text_rel_article; ?></h3>
