@@ -1,0 +1,17 @@
+<modification>
+    <id><![CDATA[modify mini-cart controller]]></id>
+    <version><![CDATA[1]]></version>
+    <vqmver><![CDATA[1.4.1]]></vqmver>
+    <author><![CDATA[Hipno]]></author>
+    <file name="catalog/controller/module/cart.php">
+        <operation>
+            <search position="after">
+                <![CDATA[$this->data['text_empty'] = $this->language->get('text_empty');]]></search>
+            <add><![CDATA[$this->data['qty'] = $this->language->get('qty');]]></add>
+        </operation>
+    </file>
+</modification>
+
+
+
+

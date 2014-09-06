@@ -1,18 +1,49 @@
 <modification>
-	<id><![CDATA[modify header controller]]></id>
-	<version><![CDATA[1]]></version>
-	<vqmver><![CDATA[1.4.1]]></vqmver>
-	<author><![CDATA[Hipno]]></author>
-	<file path="catalog/controller/common/" name="header.php">
-		<operation>
-			<search position="replace"><![CDATA[$this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));]]></search>
-			<add><![CDATA[$this->data['text_logged'] = $this->customer->getFirstName();]]></add>
-		</operation>
+    <id><![CDATA[modify header controller]]></id>
+    <version><![CDATA[1]]></version>
+    <vqmver><![CDATA[1.4.1]]></vqmver>
+    <author><![CDATA[Hipno]]></author>
+    <file path="catalog/controller/common/" name="header.php">
         <operation>
-            <search position="replace"><![CDATA[$this->data['text_welcome'] = sprintf($this->language->get('text_welcome'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'));]]></search>
-            <add><![CDATA[$this->data['text_welcome'] = '<a href="javascript:void(0);" class="top-icons login"></a>';]]></add>
+            <search position="replace">
+                <![CDATA[$this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));]]></search>
+            <add><![CDATA[$this->data['text_logged'] = $this->customer->getFirstName();]]></add>
         </operation>
-	</file>
+        <operation>
+            <search position="replace">
+                <![CDATA[$this->data['text_welcome'] = sprintf($this->language->get('text_welcome'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'));]]></search>
+            <add>
+                <![CDATA[$this->data['text_welcome'] = '<a href="javascript:void(0);" onclick="simple_login_open();return false;" class="top-icons login"></a>';]]></add>
+        </operation>
+        <operation>
+            <search position="after"><![CDATA[$this->language->load('common/header');]]></search>
+            <add><![CDATA[$this->language->load('checkout/simplecheckout');
+                        $this->data['entry_email'] = $this->language->get('entry_email');
+                                if (isset($this->request->post['email'])) {
+                                    $this->data['email'] = trim($this->request->post['email']);
+                                } else {
+                                    $this->data['email'] = '';
+        }
+                $this->data['entry_password'] = $this->language->get('entry_password');
+                $this->data['forgotten'] = $this->url->link('account/forgotten', '', 'SSL');
+                $this->data['text_forgotten'] = $this->language->get('text_forgotten');
+                $this->data['button_login'] = $this->language->get('button_login');
+
+                $this->data['error_login'] = '';
+                $this->data['redirect'] = '';
+
+                        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+            if (!empty($this->request->post['email']) && !empty($this->request->post['password']) && $this->customer->login($this->request->post['email'], $this->request->post['password'])) {
+                unset($this->session->data['guest']);
+                $this->session->data['simple_show_next_step'] = true;
+                $this->data['redirect'] = $this->url->link('checkout/simplecheckout', '', 'SSL');
+            } else {
+                $this->data['error_login'] = $this->language->get('error_login');
+            }
+        }
+            ]]></add>
+        </operation>
+    </file>
 </modification>
 
 

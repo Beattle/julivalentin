@@ -1,15 +1,15 @@
 <modification>
-	<id><![CDATA[modify language controller]]></id>
-	<version><![CDATA[1]]></version>
-	<vqmver><![CDATA[1.4.1]]></vqmver>
-	<author><![CDATA[Hipno]]></author>
-	<file path="admin/language/english/module/" name="banner.php">
-		<operation>
-			<search position="after"><![CDATA[$_['text_content_top']    = 'Content Top';]]></search>
-			<add><![CDATA[$_['text_content_left'] = 'Content Left';
+    <id><![CDATA[modify language controller]]></id>
+    <version><![CDATA[1]]></version>
+    <vqmver><![CDATA[1.4.1]]></vqmver>
+    <author><![CDATA[Hipno]]></author>
+    <file path="admin/language/english/module/" name="banner.php">
+        <operation>
+            <search position="after"><![CDATA[$_['text_content_top']    = 'Content Top';]]></search>
+            <add><![CDATA[$_['text_content_left'] = 'Content Left';
 			$_['text_content_right'] = 'Content Right';]]></add>
-		</operation>
-	</file>
+        </operation>
+    </file>
     <file path="admin/language/russian/module/" name="banner.php">
         <operation>
             <search position="after"><![CDATA[$_['text_content_top']    = 'Верх страницы';]]></search>
@@ -81,6 +81,35 @@ $_['gluten']               = 'gluten';
                 ]]></add>
         </operation>
     </file>
+    <file name="catalog/language/english/module/cart.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['qty'] = 'Qty';]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/russian/module/cart.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['qty'] = 'Кол-во';]]></add>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[Оформление покупки]]></search>
+            <add><![CDATA[В корзину]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/english/product/product.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['read_more'] = 'read more &gt;&gt;';]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/russian/product/product.php">
+        <operation>
+            <search position="after"><![CDATA[// Text]]></search>
+            <add><![CDATA[$_['read_more'] = 'текст полностью &gt;&gt;';]]></add>
+        </operation>
+    </file>
+
 </modification>
 
 

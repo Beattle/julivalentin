@@ -822,5 +822,54 @@
                     ]]></add>
         </operation>
     </file>
+    <file name="catalog/model/ac_cms/set.php">
+        <operation>
+            <search position="before"><![CDATA[public function getArticleSet($bs_id)]]></search>
+            <add><![CDATA[    public function getArticlesByAlias($arr_alias){
+        $arr_id = array();
+
+        if(is_array($arr_alias) || is_string($arr_alias)){
+
+            foreach ($arr_alias as $alias){
+                $query = $this->db->query("SELECT  `query` FROM `" . DB_PREFIX . "url_alias`  WHERE `keyword` = '" .$alias. "'");
+                $arr_id[] = (int)substr($query->row['query'], strpos($query->row['query'], "=") + 1);
+            }
+        }
+        return $arr_id;
+    }
+            ]]></add>
+        </operation>
+    </file>
+    <file name="catalog/controller/module/ac_cms_set.php">
+        <operation>
+            <search position="after">
+                <![CDATA[$article_set = $this->model_ac_cms_set->getArticleSet($settings['bs_id']);]]></search>
+            <add><![CDATA[		if (isset($this->request->get['product_id'])) {
+			$product_id = (int)$this->request->get['product_id'];
+		} else {
+			$product_id = 0;
+		}
+
+		$this->load->model('catalog/product');
+
+
+		$attributes_groups = $this->model_catalog_product->getProductAttributes($product_id);
+		// Some check just in case
+
+		if($attributes_groups[0]['attribute_group_id'] == 7){
+		    $arr_alias = explode(',',$attributes_groups[0]['attribute'][0]['text']);
+		    $arr_ids = $this->model_ac_cms_set->getArticlesByAlias($arr_alias);
+		    $article_set['settings']['article_related'] = $arr_ids;
+		}
+		]]>
+            </add>
+        </operation>
+        <operation>
+            <search position="before">
+                <![CDATA[if(!empty($this->data['articles']) || !empty($this->data['categories_tabs'])){]]></search>
+            <add>
+                <![CDATA[$this->document->addScript('catalog/view/javascript/jquery/jcarousellite_1.0.1.pack.js');]]></add>
+        </operation>
+    </file>
 
 </modification>
