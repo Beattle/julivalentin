@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://62.109.28.107/jv/admin/');
-define('HTTP_CATALOG', 'http://62.109.28.107/jv/');
+define('HTTP_SERVER', 'http://julivalentin.com/admin/');
+define('HTTP_CATALOG', 'http://julivalentin.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://julivalentin.com/admin/');
-define('HTTPS_CATALOG', 'https://julivalentin.com/admin/');
+define('HTTPS_SERVER', 'https://julivalentin.com/admin/');
+define('HTTPS_CATALOG', 'https://julivalentin.com/');
 
 // DIR
 define('DIR_APPLICATION', '/var/www/html/admin/');

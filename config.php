@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://julivalentin.com');
+define('HTTP_SERVER', 'http://julivalentin.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://julivalentin.com');
+define('HTTPS_SERVER', 'https://julivalentin.com/');
 
 // DIR
 define('DIR_APPLICATION', '/var/www/html/catalog/');

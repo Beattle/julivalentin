@@ -37,7 +37,7 @@
   <?php if ($products) { ?>
   <div class="product-list">
     <?php foreach ($products as $product) { ?>
-    <div class="product">
+    <div class="product <?php echo $product['product_id']; ?>">
       <?php if ($product['thumb']) { ?>
       <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a>
           <button onclick="addToCart('<?php echo $product['product_id']; ?>');" class="buy"></button>
