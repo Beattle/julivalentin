@@ -854,12 +854,15 @@
 
 
 		$attributes_groups = $this->model_catalog_product->getProductAttributes($product_id);
-		// Some check just in case
 
-		if($attributes_groups[0]['attribute_group_id'] == 7){
-		    $arr_alias = explode(',',$attributes_groups[0]['attribute'][0]['text']);
-		    $arr_ids = $this->model_ac_cms_set->getArticlesByAlias($arr_alias);
-		    $article_set['settings']['article_related'] = $arr_ids;
+		// Some check just in case
+        if($attributes_groups){
+		    if($attributes_groups[0]['attribute_group_id'] == 7){
+                $arr_alias = explode(',',$attributes_groups[0]['attribute'][0]['text']);
+                $arr_ids = $this->model_ac_cms_set->getArticlesByAlias($arr_alias);
+                $article_set['settings']['article_related'] = $arr_ids;
+
+		    }
 		}
 		]]>
             </add>

@@ -302,7 +302,7 @@ function addToCart(product_id, quantity) {
 			}
 			
 			if (json['success']) {
-				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+				/*$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');*/
 
                 var cart = $('#cart .cart');
                 var imgtodrag = $('.product.'+product_id).find("img").eq(0);
@@ -322,7 +322,7 @@ function addToCart(product_id, quantity) {
                         .appendTo($('body'))
                         .animate({
                             'top': cart.offset().top + 10,
-                            'left': cart.offset().left - 20,
+                            'left': cart.offset().left,
                             'width': 75,
                             'height': 75
                         }, 1000, 'easeInOutExpo');
@@ -343,11 +343,11 @@ function addToCart(product_id, quantity) {
 
 
 				
-				$('.success').fadeIn('slow');
+			//	$('.success').fadeIn('slow');
 				
 				$('#cart-total').html(json['total']);
 				
-				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
+
 			}	
 		}
 	});

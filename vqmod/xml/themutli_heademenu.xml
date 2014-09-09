@@ -59,6 +59,12 @@ $_['text_headermenu']                  = 'Footer menu';
 				$this->data['text_information'] = $this->language->get('text_information');]]></search>
 			<add><![CDATA[
 
+					if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {
+			$server = $this->config->get('config_ssl');
+		} else {
+			$server = $this->config->get('config_url');
+		}
+
 			           if (isset($this->request->get['_route_'])){
             $this->data['route'] = $this->request->get['_route_'];
         }
@@ -84,18 +90,24 @@ $_['text_headermenu']                  = 'Footer menu';
 		    }
 		    $this->data['product_id'] = $product_id;
 
+
+
 		//////////////////////////////HeaderMenu//////////////////////////////////
+
 		$this->load->model('catalog/headermenu');
+
+
 		$headermenu =$this->model_catalog_headermenu->getHeadermenu();
 
 		foreach ($headermenu as &$header){
+
 			if($header['link'] == $this->data['route']){
 		        $header['class'] = 'active';
 		    } else {
 		        $header['class'] = '';
 		    }
 		    if($header['link'] == '/'){
-		        $header['link'] = $this->data['base'];
+		        $header['link'] = $server;
 		    }
 
 		    if($header['sub_title']){
@@ -122,19 +134,13 @@ $_['text_headermenu']                  = 'Footer menu';
 		}
 
 		$this->data['headermenu'] = $headermenu;
+
+
+
 		////////////////////////////////////////////////////////////////
 		]]></add>
 		</operation>
 	</file>
-<!--	<file name="catalog/view/theme/*/template/common/footer.tpl">
-		<operation>
-			<search position="repalce"><![CDATA[
-				<?php foreach ($categories as $category) { ?>]]></search>
-			<add><![CDATA[
 
-			<?php foreach ($categories as $category) { ?>
-		]]></add>
-		</operation>
-	</file>-->
 
 </modification>
