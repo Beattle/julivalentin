@@ -344,8 +344,9 @@ function addToCart(product_id, quantity) {
 
 				
 			//	$('.success').fadeIn('slow');
+                $('#cart').load('index.php?route=module/cart #cart > *');
 				
-				$('#cart-total').html(json['total']);
+				// $('#cart-total').html(json['total']);
 				
 
 			}	
