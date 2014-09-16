@@ -86,7 +86,7 @@ $(document).ready(function() {
 	});
 
 
-    $(".right-column article#article, section.category-content,#content.article .article-info,.product-info").mCustomScrollbar({
+    $(".right-column article#article, section.category-content,#content.article .article-info,.product-info, .simple-content").mCustomScrollbar({
         theme:"dark-3",
         mouseWheel:{
             enable: true,
@@ -304,7 +304,7 @@ function addToCart(product_id, quantity) {
 			if (json['success']) {
 				/*$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');*/
 
-                var cart = $('#cart .cart');
+                var cart = $('#cart');
                 var imgtodrag = $('.product.'+product_id).find("img").eq(0);
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
@@ -328,7 +328,7 @@ function addToCart(product_id, quantity) {
                         }, 1000, 'easeInOutExpo');
 
                     setTimeout(function () {
-                        cart.effect("bounce", {
+                        cart.find('>a').effect("bounce", {
                             times: 2
                         }, 200);
                     }, 1500);
@@ -342,9 +342,19 @@ function addToCart(product_id, quantity) {
                 }
 
 
-				
-			//	$('.success').fadeIn('slow');
-                $('#cart').load('index.php?route=module/cart #cart > *');
+
+                $.ajax({
+                    url:'index.php?route=module/cart',
+                    dataType:'html',
+                    complete: function(data,status){
+                        var html = data.responseText;
+                        var replace =  $(html).find('div.content').html();
+                        console.log(cart.find('div.content').html());
+                        cart.find('div.content').html(replace);
+                    }
+
+                });
+              //  $('#cart').load('index.php?route=module/cart #cart > div.content');
 				
 				// $('#cart-total').html(json['total']);
 				

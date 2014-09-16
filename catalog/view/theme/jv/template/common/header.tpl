@@ -58,7 +58,6 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <?php echo $google_analytics; ?>
 </head>
 <body>
-<?php // echo '<pre>' . print_r($_SERVER, true) . '</pre>'; ?>
 <div id="container">
 <header>
   <?php echo $cart; ?>

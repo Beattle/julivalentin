@@ -49,7 +49,7 @@
         <operation>
             <search position="before"><![CDATA[?>]]></search>
             <add><![CDATA[          /////////////////////////-----ingredients--------////////////////
-$_['plain chocolate']      = 'тёмный шоколад';
+$_['dark chocolate']      = 'тёмный шоколад';
 $_['milk chocolate']       = 'молочный шоколад';
 $_['white chocolate']      = 'белый шоколад';
 $_['alcohol']              = 'алкоголь';
@@ -69,7 +69,7 @@ $_['gluten']               = 'клейковина';
         <operation>
             <search position="before"><![CDATA[?>]]></search>
             <add><![CDATA[          /////////////////////////-----ingredients--------////////////////
-$_['plain chocolate']      = 'plain chocolate';
+$_['dark chocolate']      = 'dark chocolate';
 $_['milk chocolate']       = 'milk chocolate';
 $_['white chocolate']      = 'white chocolate';
 $_['alcohol']              = 'alcohol';

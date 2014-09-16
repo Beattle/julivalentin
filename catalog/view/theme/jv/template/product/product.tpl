@@ -437,7 +437,16 @@ $('#button-cart').bind('click', function() {
                 }
 					
 		//		$('.success').fadeIn('slow');
-                $('#cart').load('index.php?route=module/cart #cart > *');
+                $.ajax({
+                    url:'index.php?route=module/cart',
+                    dataType:'html',
+                    complete: function(data,status){
+                        var html = data.responseText;
+                        var replace =  $(html).find('div.content').html();
+                        cart.find('div.content').html(replace);
+                    }
+
+                });
 					
 				$('#cart-total').html(json['total']);
 
