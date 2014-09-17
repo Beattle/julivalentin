@@ -319,7 +319,7 @@ function addToCart(product_id, quantity) {
                             'width': '150px',
                             'z-index': '100'
                         })
-                        .appendTo($('body'))
+                        .appendTo($('#container'))
                         .animate({
                             'top': cart.offset().top + 10,
                             'left': cart.offset().left,

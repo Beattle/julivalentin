@@ -25,6 +25,8 @@ class ControllerModuleACcmsSet extends Controller
         $article_set = $this->model_ac_cms_set->getArticleSet($settings['bs_id']);
 
 
+
+
         if ($article_set) {
             $this->renderAset(array(
                 'article_set' => $article_set,
@@ -326,6 +328,7 @@ class ControllerModuleACcmsSet extends Controller
 
     private function getArticles($article_set, $in_categories = null)
     {
+
         //Date formats
         $date_format_short = $this->language->get('date_format_short');
         //$date_format_long = $this->language->get('date_format_long');
@@ -344,6 +347,7 @@ class ControllerModuleACcmsSet extends Controller
         if (!empty($article_set['settings']['article_related'])) {
             $data['article'] = $article_set['settings']['article_related'];
         }
+
 
         //ARTICLES NUMBER
         $data['art_amount'] = $article_set['settings']['art_amount'];

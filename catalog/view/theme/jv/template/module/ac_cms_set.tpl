@@ -1,3 +1,4 @@
+<?php // :?:echo '<pre>'.print_r($check,true).'</pre>'; ?>
 <div class="box ac-module_set">
     <div class="box-heading"><?php echo $title; ?></div>
     <button class="prev"></button>

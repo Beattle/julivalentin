@@ -399,7 +399,7 @@ $('#button-cart').bind('click', function() {
 			if (json['success']) {
 				/*$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
 */
-                var cart = $('#cart').find('.cart');
+                var cart = $('#cart');
                 var imgtodrag = $('.image').find("img").eq(0);
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
@@ -414,7 +414,7 @@ $('#button-cart').bind('click', function() {
                             'width': '25%',
                             'z-index': '100'
                         })
-                        .appendTo($('body'))
+                        .appendTo($('#container'))
                         .animate({
                             'top': cart.offset().top + 10,
                             'left': cart.offset().left,
@@ -423,7 +423,7 @@ $('#button-cart').bind('click', function() {
                         }, 1000, 'easeInOutExpo');
 
                     setTimeout(function () {
-                        cart.effect("bounce", {
+                        cart.find('a.cart').effect("bounce", {
                             times: 2
                         }, 200);
                     }, 1500);

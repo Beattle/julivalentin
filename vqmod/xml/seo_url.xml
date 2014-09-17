@@ -1,0 +1,16 @@
+<modification>
+	<id><![CDATA[modify seo_url controller]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file path="catalog/controller/common/" name="seo_url.php">
+		<operation>
+			<search position="before"><![CDATA[return $link;]]></search>
+			<add><![CDATA[$link = str_replace('index.php?route=common/home', '', $link);]]></add>
+		</operation>
+	</file>
+</modification>
+
+
+
+
