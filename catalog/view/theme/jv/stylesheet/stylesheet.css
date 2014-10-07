@@ -108,7 +108,7 @@ li {
 #container {
   position: relative;
   margin-bottom: -110px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #container header {
   margin-bottom: 1%;
@@ -122,6 +122,10 @@ li {
 #container header > div {
   float: right;
   margin-left: 14px;
+  margin-top: 2px;
+}
+#container header > div:first-child {
+  margin-top: 0;
 }
 #container header .top-icons {
   background: transparent no-repeat 0 0;
@@ -132,7 +136,7 @@ li {
   text-decoration: none;
 }
 #container header .top-icons.cart.fill {
-  background-position: -122px 0;
+  background-position: -122px 2px;
   height: 23px;
   position: relative;
   bottom: 3px;
@@ -558,6 +562,9 @@ li {
 #container #content.category-products .category-info h2 {
   color: #361703;
 }
+#container #content.product-page {
+  overflow: hidden;
+}
 #container #content.product-page .image {
   width: 87%;
   height: inherit;
@@ -636,6 +643,12 @@ li {
   margin: auto;
   background-position: -106px -24px;
 }
+#container #content.product-page .product-info .ac-module_set .carousel {
+  margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 #container #content.product-page .product-info .ac-module_set .carousel a {
   text-decoration: none;
   text-align: center;
@@ -648,7 +661,7 @@ li {
   display: block;
   margin-left: 10px;
   color: #000;
-  text-shadow: -1px -1px 0 #aaaaaa;
+  text-shadow: 0px 0px 0 #aaaaaa;
   font-size: 0.8rem;
 }
 #container #content.product-page .product-info .cart {
@@ -711,7 +724,7 @@ li {
   background-image: url('../image/checkbox.png');
   display: block;
   height: 18px;
-  line-height: 23px;
+  line-height: 19px;
 }
 #container #content.product-page .product-info .option.checkbox input:checked + label {
   background-position: 0 -18px;
@@ -727,23 +740,24 @@ li {
   width: 100%;
 }
 #container #content.product-page .product-info .option.radio .theme {
-  float: left;
+  margin: 5px 0;
 }
 #container #content.product-page .product-info .option.radio .theme input {
   display: none;
 }
 #container #content.product-page .product-info .option.radio .theme input + label {
   cursor: pointer;
-  width: 19px;
-  height: 19px;
+  width: 14px;
+  height: 14px;
   background: transparent no-repeat 0 0;
   background-image: url('../image/radio.png');
+  margin-top: 11px;
 }
 #container #content.product-page .product-info .option.radio .theme input:checked + label {
-  background-position: 0 -19px;
+  background-position: 0 -14px;
 }
-#container #content.product-page .product-info .option.radio .theme img,
-#container #content.product-page .product-info .option.radio .theme label {
+#container #content.product-page .product-info .option.radio .theme label,
+#container #content.product-page .product-info .option.radio .theme a {
   display: inline-block;
   vertical-align: top;
 }
@@ -751,11 +765,12 @@ li {
   text-decoration: none;
 }
 #container #content.product-page .product-info .option.radio .theme .name {
-  margin: 5px 0 0 23px;
+  margin: 0;
   font-size: 0.8rem;
   color: #000;
   text-decoration: none;
   text-shadow: -1px -1px 0 #d2d2d2;
+  padding: 10px;
 }
 #container #content.product-page .product-info .option.radio:after {
   display: table;
@@ -959,7 +974,7 @@ footer #menu > ul > li > div > ul li a {
   font-weight: normal;
 }
 footer #menu > ul > li > div > ul li a:hover {
-  color: #668796;
+  color: #214e62;
 }
 footer #menu > ul > li > div > ul li > ul {
   position: absolute;
@@ -1045,7 +1060,8 @@ footer #social-networks {
   top: 0;
   bottom: 0;
   margin: auto;
-  height: 31px;
+  height: 20px;
+  overflow: hidden;
 }
 footer #social-networks a {
   display: block;
@@ -1054,6 +1070,19 @@ footer #social-networks a {
   border: none;
   float: left;
   margin: 0 7px;
+  position: relative;
+}
+footer #social-networks a:hover {
+  bottom: 19px;
+}
+footer #social-networks a#Instagram:hover {
+  bottom: 21px;
+}
+footer #social-networks a#Pinterest:hover {
+  bottom: 20px;
+}
+footer #social-networks a#Vkontakte:hover {
+  bottom: 20px;
 }
 footer #search {
   position: absolute;
@@ -1157,9 +1186,19 @@ footer #search .button-search {
   padding: 0 21px;
   text-shadow: -1px -1px 0 #aaaaaa;
 }
-body {
-  margin: 0;
+.image-err {
+  margin: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 540px;
+  height: 360px;
 }
-.jvs {
-  color: #ffffff;
+.error-404 .content {
+  height: 100%;
+}
+.test {
+  font-family: Alegreya, 'Conv_charteritcblack', Verdana, sans-serif;
+  font-size: 100;
 }

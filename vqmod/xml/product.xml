@@ -17,8 +17,8 @@
         <operation>
             <search position="replace">
                 <![CDATA['image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),]]></search>
-            <add><![CDATA['image'                       => $this->model_tool_image->resize($option_value['image'],434,600),
-            'thumb'                                     => $this->model_tool_image->resize($option_value['image'],130,180),
+            <add><![CDATA['image'                       => $this->model_tool_image->resize($option_value['image'],600,434),
+            'thumb'                                     => $this->model_tool_image->resize($option_value['image'],180,130),
             ]]></add>
         </operation>
         <!--        <operation>

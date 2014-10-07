@@ -832,7 +832,9 @@
 
             foreach ($arr_alias as $alias){
                 $query = $this->db->query("SELECT  `query` FROM `" . DB_PREFIX . "url_alias`  WHERE `keyword` = '" .$alias. "'");
+                if($query->num_rows){
                 $arr_id[] = (int)substr($query->row['query'], strpos($query->row['query'], "=") + 1);
+                }
             }
         }
         return $arr_id;
@@ -862,6 +864,7 @@
                 $arr_ids = $this->model_ac_cms_set->getArticlesByAlias($arr_alias);
                 $article_set['settings']['article_related'] = $arr_ids;
 
+
             }
         }
 		]]>
@@ -871,7 +874,15 @@
             <search position="before">
                 <![CDATA[if (!empty($this->data['articles']) || !empty($this->data['categories_tabs'])) {]]></search>
             <add>
-                <![CDATA[$this->document->addScript('catalog/view/javascript/jquery/jcarousellite_1.0.1.pack.js');]]></add>
+                <![CDATA[$this->document->addScript('catalog/view/javascript/jquery/jquery.jcarousellite.min.js');]]></add>
+        </operation>
+    </file>
+    <file name="catalog/controller/ac_cms/category.php">
+        <operation>
+            <search position="before"><![CDATA[$articles = $this->model_ac_cms_article->getArticles($data);]]></search>
+            <add><![CDATA[$data['sort_by'] = 3;
+            $data['sort_order'] = 'ASC';
+            ]]></add>
         </operation>
     </file>
 

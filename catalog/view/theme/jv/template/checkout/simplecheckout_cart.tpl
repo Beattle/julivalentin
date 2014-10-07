@@ -62,9 +62,9 @@
                 <?php } ?>
             </td>
             <td class="quantity">
-                <img src='<?php echo $simple->tpl_joomla_path() ?>catalog/view/image/minus.png' border='0' <?php if ($quantity > 1) { ?>onclick="jQuery(this).next().val(~~jQuery(this).next().val()-1);simplecheckout_reload('cart_value_decreased');"<?php } ?>>
+                <span class="minus"   <?php if ($quantity > 1) { ?>onclick="jQuery(this).next().val(~~jQuery(this).next().val()-1);simplecheckout_reload('cart_value_decreased');"<?php } ?>>-</span>
                 <input type="text" name="quantity[<?php echo $product['key']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" onchange="simplecheckout_reload('cart_value_changed')" />
-                <img src='<?php echo $simple->tpl_joomla_path() ?>catalog/view/image/plus.png' border='0' onclick="jQuery(this).prev().val(~~jQuery(this).prev().val()+1);simplecheckout_reload('cart_value_increased');">
+                <span class="plus"  onclick="jQuery(this).prev().val(~~jQuery(this).prev().val()+1);simplecheckout_reload('cart_value_increased');">+</span>
             </td>
             <td class="price"><nobr><?php echo $product['price']; ?></nobr></td>
             <td class="total"><nobr><?php echo $product['total']; ?></nobr></td>

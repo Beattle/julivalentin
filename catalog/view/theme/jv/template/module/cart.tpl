@@ -1,5 +1,5 @@
 <div id="cart">
-    <a class="top-icons cart" href="javascript:void(0);" title="<?php echo $heading_title; ?>"></a>
+    <a class="top-icons cart <?php echo $products ? 'fill':'empty' ?>" href="javascript:void(0);" title="<?php echo $heading_title; ?>"></a>
 
     <div class="content">
         <?php if ($products || $vouchers) { ?>

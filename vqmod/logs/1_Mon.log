@@ -1,7 +1,7 @@
----------- Date: 2014-07-28 10:00:26 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=common/home&amp;token=adbe44995ce53f50f61f631e58d8c0e0
+---------- Date: 2014-09-08 10:51:35 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection/for-her?product_id=57
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -13,10 +13,28 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:05:33 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=common/home&amp;token=adbe44995ce53f50f61f631e58d8c0e0
+---------- Date: 2014-09-08 10:57:26 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /
+VQMod::_getMods - NO XML FILES READABLE IN XML FOLDER
+----------------------------------------------------------------------
+
+
+---------- Date: 2014-09-08 10:57:43 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection/for-her
+VQMod::_getMods - NO XML FILES READABLE IN XML FOLDER
+----------------------------------------------------------------------
+
+
+---------- Date: 2014-09-08 10:57:46 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection/for-her?product_id=57
+VQMod::_getMods - NO XML FILES READABLE IN XML FOLDER
+----------------------------------------------------------------------
+
+
+---------- Date: 2014-09-08 10:58:39 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection/for-her?product_id=57
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -28,10 +46,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:05:33 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=common/home/chart&amp;token=adbe44995ce53f50f61f631e58d8c0e0&amp;range=day
+---------- Date: 2014-09-08 10:58:59 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection/for-her?product_id=57
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -43,10 +61,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:05:35 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
+---------- Date: 2014-09-08 10:59:09 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection/for-her?product_id=57
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -58,34 +76,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:07:45 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
+---------- Date: 2014-09-08 11:13:12 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection/for-her?product_id=57
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:07:51 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/headermenu&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -97,10 +91,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:08:43 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=user/user_permission&amp;token=adbe44995ce53f50f61f631e58d8c0e0
+---------- Date: 2014-09-08 19:22:55 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=53
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -112,150 +106,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:10:55 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
+---------- Date: 2014-09-08 19:24:37 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=53
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:10:58 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:16:42 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:16:45 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:17:47 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:17:51 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=product/category&amp;path=59
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:17:57 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:18:14 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:19:11 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:19:18 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/view/theme/*/template/common/header.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php foreach ($categories as $category) { ?>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:26:53 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -267,10 +121,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:29:45 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
+---------- Date: 2014-09-08 19:27:47 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=53
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -282,181 +136,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:33:21 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
+---------- Date: 2014-09-08 19:28:54 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=53
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:32 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:42 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=product/category&amp;path=59
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:44 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:47 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=product/category&amp;path=59
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:49 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:52 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:58 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category/delete&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -468,115 +151,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:33:58 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category&amp;token=adbe44995ce53f50f61f631e58d8c0e0
+---------- Date: 2014-09-08 19:29:26 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=53
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:33:59 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:06 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:12 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category/insert&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:17 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category/insert&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -588,145 +166,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:34:17 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category&amp;token=adbe44995ce53f50f61f631e58d8c0e0
+---------- Date: 2014-09-08 19:29:50 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=56
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:23 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=extension/module&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:33 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=extension/module&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:38 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=user/user_permission&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:39 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=user/user_permission/update&amp;token=adbe44995ce53f50f61f631e58d8c0e0&amp;user_group_id=1
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:34:44 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=user/user_permission/update&amp;token=adbe44995ce53f50f61f631e58d8c0e0&amp;user_group_id=1
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -738,61 +181,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:34:44 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=user/user_permission&amp;token=adbe44995ce53f50f61f631e58d8c0e0
+---------- Date: 2014-09-08 19:30:33 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=56
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : admin/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): $this->load->model('catalog/information');
-
-File Name    : admin/view/template/common/footer.tpl(0)
-VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <li id="system"><a class="top"><?php echo $text_system; ?></a>
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:36:30 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/themutli_heademenu.xml
-   id        : Header Menu
-   version   : 1.4.x and 1.5.x
-   vqmver    : 2.4.0
-   author    : TMD(opencartextensions.in)
-
-File Name    : catalog/controller/common/footer.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->children = array(
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:47:06 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -804,10 +196,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:47:09 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
+---------- Date: 2014-09-08 19:31:20 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=56
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -819,10 +211,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:47:34 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
+---------- Date: 2014-09-08 19:34:07 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=56
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -834,10 +226,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:47:36 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
+---------- Date: 2014-09-08 19:36:22 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=56
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -849,10 +241,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:48:07 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
+---------- Date: 2014-09-08 19:38:54 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=56
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -864,10 +256,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:49:21 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category&amp;token=adbe44995ce53f50f61f631e58d8c0e0
+---------- Date: 2014-09-08 19:40:16 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /romantic-collection?product_id=56
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1
@@ -879,55 +271,10 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logge
 ----------------------------------------------------------------------
 
 
----------- Date: 2014-07-28 10:49:25 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/category/update&amp;token=adbe44995ce53f50f61f631e58d8c0e0&amp;category_id=60
+---------- Date: 2014-09-08 19:57:36 ~ IP : 95.37.143.247 ----------
+REQUEST URI : /admin/
 MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:49:30 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/admin/index.php?route=catalog/headermenu&amp;token=adbe44995ce53f50f61f631e58d8c0e0
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:49:33 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
-   id        : modify header controller
-   version   : 1
-   vqmver    : 1.4.1
-   author    : Hipno
-
-File Name    : system/engine/controller.php(0)
-VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
-
-----------------------------------------------------------------------
-
-
----------- Date: 2014-07-28 10:51:53 ~ IP : 93.120.208.67 ----------
-REQUEST URI : /jv/index.php?route=common/home
-MOD DETAILS:
-   modFile   : /var/www/hipno/data/www/test.com/jv/vqmod/xml/controller.xml
+   modFile   : /var/www/html/vqmod/xml/controller.xml
    id        : modify header controller
    version   : 1
    vqmver    : 1.4.1

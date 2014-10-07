@@ -1,0 +1,24 @@
+<modification>
+	<id><![CDATA[modify home controller]]></id>
+	<version><![CDATA[1]]></version>
+	<vqmver><![CDATA[1.4.1]]></vqmver>
+	<author><![CDATA[Hipno]]></author>
+	<file  name="system/library/currency.php">
+		<operation>
+			<search position="after"><![CDATA[$symbol_right  = $this->currencies[$currency]['symbol_right'];]]></search>
+			<add><![CDATA[            if ($symbol_right == 'Р'){
+                $symbol_right = '<span class="r">Р</span>';
+            }]]></add>
+		</operation>
+        <operation>
+            <search position="after"><![CDATA[$symbol_right  = $this->currencies[$this->code]['symbol_right'];]]></search>
+            <add><![CDATA[            if ($symbol_right == 'Р'){
+                $symbol_right = '<span class="r">Р</span>';
+            }]]></add>
+        </operation>
+	</file>
+</modification>
+
+
+
+

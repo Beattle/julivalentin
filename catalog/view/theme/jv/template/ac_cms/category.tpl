@@ -1,4 +1,4 @@
-<?php // echo '<pre>' . print_r($articles, true) . '</pre>'; ?>
+<?php //  echo '<pre>' . print_r($check, true) . '</pre>'; ?>
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
     <div class="breadcrumb">
         <?php $last = array_search(end($breadcrumbs), $breadcrumbs); ?>

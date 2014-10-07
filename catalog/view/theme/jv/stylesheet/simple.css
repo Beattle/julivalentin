@@ -139,14 +139,27 @@
     overflow: auto;
     margin-bottom: 20px;
     padding: 6px;
-    border: 1px solid #EEEEEE !important;
-    background: none repeat scroll 0 0 #FFFFFF;
     text-align:right;
 }
 .simplecheckout-button-right {
     float: right;
-    text-align: right;
+    background: none no-repeat scroll 0 0 #361703;
+    border-color: transparent;
+    border-radius: 7px;
+    color: #fff;
+    display: block;
+    height: 28px;
+    text-transform: uppercase;
+    max-width: 155px;
+    width: 25%;
+    text-align: center;
+    cursor: pointer;
 }
+
+#simplecheckout_button_confirm{
+    line-height: 28px;
+}
+
 .simplecheckout-button-left {
     float: left;
     text-align: left;
@@ -206,7 +219,7 @@
 }
 .simplecheckout-customer-block {
     overflow: hidden;
-    padding: 5px;
+    /*padding: 2px;*/
 }
 .simplecheckout-company-header {
     display: block;
@@ -396,7 +409,12 @@
     padding:0;
     width:20px;
     vertical-align:top;
-    text-align:right;
+    text-align:center;
+}
+
+.simplecheckout-cart td.quantity span{
+    color:#214e62;
+    cursor: pointer;
 }
 
 #container #content #simplecheckout_cart .image img{

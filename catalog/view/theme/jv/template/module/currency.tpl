@@ -10,7 +10,10 @@
     ?>
     <div id="currency">
         <form class="currency" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-            <?php foreach ($currencies as $currency) { ?>
+            <?php foreach ($currencies as &$currency) { ?>
+                <?php if($currency['symbol_right'] == 'Р' ){
+                    $currency['symbol_right'] = '<span class="r">Р</span>';
+                } ?>
                 <?php if ($currency['code'] == $currency_code) { ?>
                     <?php if ($currency['symbol_left']) { ?>
                         <a class="top-icons currency"

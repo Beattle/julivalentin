@@ -1,4 +1,4 @@
-<?php // :?:echo '<pre>'.print_r($check,true).'</pre>'; ?>
+<?php // echo '<pre>'.print_r($check,true).'</pre>'; ?>
 <div class="box ac-module_set">
     <div class="box-heading"><?php echo $title; ?></div>
     <button class="prev"></button>
@@ -84,27 +84,23 @@
     </div>
 </div>
 <script type="text/javascript">
-    window.onload = function () {
-        $(".carousel").jCarouselLite({
-            circular: true,
-            btnNext: ".next",
-            btnPrev: ".prev",
-            speed: 1500
-        });
-        function center_carousel() {
-            var $cont = $('.ac-module_set');
-            var width_cont = $cont.width();
-            var width_c = $cont.find('.carousel').width();
-            if (width_c < width_cont) {
-                $cont.find('.carousel').css({
-                    marginLeft: (width_cont - width_c) / 2
-                });
-            }
-        }
+    $(document).ready(function(){
 
-        center_carousel();
-        $(window).resize(function () {
-            center_carousel();
-        })
-    }
+        $(".carousel").jCarouselLite({
+             circular: false,
+            btnNext: ".prev",
+           btnPrev: ".next",
+            speed: 1000
+          //  visible: 2
+           // auto:1000
+        });
+
+
+
+
+
+
+    });
+
+
 </script>

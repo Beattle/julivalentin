@@ -55,17 +55,9 @@
         <?php echo $weight; ?>
     </div>
 <?php endif; ?>
-<?php if ($description): ?>
+<?php if ($description):   ?>
     <div class="description">
-        <?php $short_text = substr($description, 0, strpos($description, '<hr />')); ?>
-        <?php echo $short_text;
-        $other_text = strstr($description, '<hr />');
-        if (($other_text !== '<hr />')): ?>
-            <a id="read-more" href="javascript:void(0)"><?php ?><?php echo $read_more ?></a>
-            <div class="read-more">
-                <?php echo str_replace('<hr />', '', $other_text); ?>
-            </div>
-        <?php endif; ?>
+        <?php echo $description; ?>
     </div>
 <?php endif; ?>
 <?php if ($manufacturer) { ?>
@@ -135,10 +127,10 @@
             (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
             <?php } ?>
           </label>
-          <br />
+
           <?php } ?>
         </div>
-        <br />
+
         <?php } ?>
         <?php if ($option['type'] == 'image') { ?>
         <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
@@ -170,7 +162,6 @@
                     <span class="name"><?php echo $option['name']; ?>:</span>
                     <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" />
         </div>
-        <br />
         <?php } ?>
         <?php if ($option['type'] == 'textarea') { ?>
                 <div id="option-<?php echo $option['product_option_id']; ?>" class="option text">
@@ -236,9 +227,10 @@
                             <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"></label>
                             <a class="colorbox" href="<?php echo $option_value['image'] ?>"
                                title="<?php echo $option_value['name']; ?>">
+                                <span class="name"><?php echo $option_value['name']; ?></span>
                                 <img src="<?php echo $option_value['thumb']; ?>"
                                      alt="<?php echo $option_value['name']; ?>"/>
-                                <span class="name"><?php echo $option_value['name']; ?></span>
+
                             </a>
                         </div>
                     <?php } ?>
@@ -495,7 +487,7 @@ new AjaxUpload('#button-option-<?php echo $option['product_option_id']; ?>', {
 <?php } ?>
 <?php } ?>
 <script type="text/javascript"><!--
-$('#review .pagination a').live('click', function() {
+/*$('#review .pagination a').live('click', function() {
 	$('#review').fadeOut('slow');
 		
 	$('#review').load(this.href);
@@ -537,14 +529,14 @@ $('#button-review').bind('click', function() {
 			}
 		}
 	});
-});
+});*/
     //--></script>
 <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script> 
 <script type="text/javascript"><!--
 $(document).ready(function() {
-	if ($.browser.msie && $.browser.version == 6) {
+/*	if ($.browser.msie && $.browser.version == 6) {
 		$('.date, .datetime, .time').bgIframe();
-	}
+	}*/
 
 	$('.date').datepicker({dateFormat: 'yy-mm-dd'});
 	$('.datetime').datetimepicker({
